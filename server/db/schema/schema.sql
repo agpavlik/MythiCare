@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS users, pet_owners, pet_sitters, pet_types, pets, sitting_services, booking_id, reviews CASCADE;
+DROP TABLE IF EXISTS users, pet_owners, pet_sitters, pet_types, pets, sitting_services, bookings, reviews CASCADE;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY NOT NULL,
