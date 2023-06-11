@@ -35,25 +35,29 @@ const runSeeds = async db => {
 }
 
 const resetDB = async () => {
-	try {
-		console.log("Running DB Reset...");
-		console.log("Establishing DB connection: ");
-		const client = new Client(connObj);
-		await client.connect();
-		console.log("connection established!\n");
+  let client;
 
-		console.log("-- Running Migrations --\n");
-		await runMigrations(client);
-		console.log('\n');
-		console.log("-- Running Seeds --\n");
-		await runSeeds(client);
-		console.log('\n');
-		console.log("-- COMPLETED --");
-		client.end();
-	} catch (e) {
-		console.log("ERROR OCCURED:\n", e);
-		client.end();
-	}
-}
+  try {
+    console.log("Running DB Reset...");
+    console.log("Establishing DB connection: ");
+    client = new Client(connObj);
+    await client.connect();
+    console.log("Connection established!\n");
+
+    console.log("-- Running Migrations --\n");
+    await runMigrations(client);
+    console.log('\n');
+    console.log("-- Running Seeds --\n");
+    await runSeeds(client);
+    console.log('\n');
+    console.log("-- COMPLETED --");
+    client.end();
+  } catch (e) {
+    console.log("ERROR OCCURRED:\n", e);
+    if (client) {
+      client.end();
+    }
+  }
+};
 
 resetDB();

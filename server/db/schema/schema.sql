@@ -15,7 +15,7 @@ CREATE TABLE users (
 
 CREATE TABLE pet_owners (
   id SERIAL PRIMARY KEY NOT NULL,
-  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE
 );
 
 CREATE TABLE pet_sitters (
@@ -47,11 +47,10 @@ CREATE TABLE pets (
   profile_photo VARCHAR(255)
 );
 
-
 CREATE TABLE sitting_services (
   id SERIAL PRIMARY KEY NOT NULL,
   type_id INTEGER REFERENCES pet_types(id) ON DELETE CASCADE,
-  sitter_id INTEGER REFERENCES pet_sitters(id) ON DELETE CASCADE,
+  sitter_id INTEGER REFERENCES pet_sitters(id) ON DELETE CASCADE
 );
 
 CREATE TABLE bookings (
@@ -59,8 +58,8 @@ CREATE TABLE bookings (
   pet_id INTEGER REFERENCES pets(id) ON DELETE CASCADE,
   sitter_id INTEGER REFERENCES pet_sitters(id) ON DELETE CASCADE,
   service_id INTEGER REFERENCES sitting_services(id) ON DELETE CASCADE,
-  start_date INTEGER NOT NULL,
-  end_date VARCHAR(255) NOT NULL,
+  start_date DATE NOT NULL,
+  end_date DATE NOT NULL,
   fee INTEGER NOT NULL,
   is_complete BOOLEAN DEFAULT false
 );
@@ -73,4 +72,3 @@ CREATE TABLE reviews (
   rating INTEGER,
   comment VARCHAR(255)
 );
-
