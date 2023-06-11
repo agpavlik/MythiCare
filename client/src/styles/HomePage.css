@@ -1,0 +1,28 @@
+.home-section{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.home-box{
+  width:auto;
+  flex-direction: row;
+  margin: 100px 0;
+}
+
+.button-home-page {
+  margin: 10px 10%;
+  width: 200px;
+  height: 50px;
+}
+
+.button-login {
+  width: 100px;
+  height: 30px;
+}
+
+.button-about {
+  width: 150px;
+  height: 30px;
+}
