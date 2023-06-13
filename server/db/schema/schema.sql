@@ -23,7 +23,14 @@ CREATE TABLE pet_sitters (
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   bio TEXT,
   experience INTEGER,
-  nightly_rate INTEGER
+  nightly_rate INTEGER,
+  monday_available BOOLEAN DEFAULT FALSE,
+  tuesday_available BOOLEAN DEFAULT FALSE,
+  wednesday_available BOOLEAN DEFAULT FALSE,
+  thursday_available BOOLEAN DEFAULT FALSE,
+  friday_available BOOLEAN DEFAULT FALSE,
+  saturday_available BOOLEAN DEFAULT FALSE,
+  sunday_available BOOLEAN DEFAULT FALSE
 );
 
 CREATE TABLE pet_types (

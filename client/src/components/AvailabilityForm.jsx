@@ -24,7 +24,7 @@ const AvailabilityForm = () => {
     event.preventDefault();
 
     try {
-      await axios.put('/api/users/123/availability', { availability }); // Replace 123 with the actual userId
+      await axios.put('/sitters/:id/', { availability });
       console.log('Availability updated successfully');
     } catch (error) {
       console.error(error);
