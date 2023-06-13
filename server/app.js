@@ -20,7 +20,7 @@
 // module.exports = app;
 
 require('dotenv').config()
-const {ENVIROMENT, PORT} = process.env;
+const {ENVIRONMENT, PORT} = process.env;
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
@@ -28,7 +28,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 // middleware setup
-app.use(morgan(ENVIROMENT));
+app.use(morgan(ENVIRONMENT));
 app.use(bodyParser.json());
 
 
@@ -38,3 +38,4 @@ app.get('/', (req, res) => {
 
 app.listen(PORT, () => console.log(`Server is listening on port ${PORT}`));
 
+module.exports = app;
