@@ -1,11 +1,11 @@
 import React from 'react';
-import HomePage from '../components/HomePage';
+import Home from '../components/Home';
 
 const HomeRoute = () => {
 
   return (
     <div className="home-route">
-      <HomePage/>
+      <Home/>
     </div>
   )
 
