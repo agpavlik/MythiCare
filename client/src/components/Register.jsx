@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+
+
+
 export default class Register extends Component {
+
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -28,26 +32,25 @@ export default class Register extends Component {
       .then(res => {console.log(res)})
       .catch(err => {console.log(err)});
 
-    // // Send the form data to the server
-    //   const response = await fetch('/api/register', {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify({ first_name, last_name, email, password }),
-    //   });
+  //   // Send the form data to the server
+  //     const response = await fetch('/api/register', {
+  //       method: 'POST',
+  //       headers: { 'Content-Type': 'application/json' },
+  //       body: JSON.stringify({ first_name, last_name, email, password }),
+  //     });
 
-    //   if (response.ok) {
-    //     // Registration successful, redirect to another page
-    //     window.location.href = '/dashboard';
-    //   } else {
-    //     const error = await response.json();
-    //     alert(error.message);
-    //   }
-    // }
-
+  //     if (response.ok) {
+  //       // Registration successful, redirect to another page
+  //       window.location.href = '/dashboard';
+  //     } else {
+  //       const error = await response.json();
+  //       alert(error.message);
+  //     }
+  //   }
   };
 
-  render() {
-    return(
+  render (){
+    return (
       <div className="auth-wrapper">
         <div className="auth-inner">
           <form onSubmit={this.handleSubmit}>

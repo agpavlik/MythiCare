@@ -20,13 +20,25 @@ export default class Login extends Component {
     axios.post('/login', data)
     .then(res => {
       console.log(res)
-      localStorage.setItem('token', res.data.token); // do we need the local storage?
-      this.setState({
-        loggedIn: true
-      });
-      this.props.setUser(res.data.user);
+      axios.get('/api/users/me').then((result) => {
+        this.props.setUser(result);
+      })
+
+      // localStorage.setItem('token', res.data.token); // do we need the local storage?
+      // this.setState({
+      //   loggedIn: true
+      // });
+      // this.props.setUser(res.data.user);
     })
     .catch(err => {console.log(err)});
+
+
+   // Perform validation
+    if (!data.email || !data.password){
+      alert('Please enter both email and password');
+      return;
+    }
+
   };
 
 
@@ -43,11 +55,10 @@ export default class Login extends Component {
     }
   };
 
-
   render(){
-    // if(this.state.loggedIn){
-    //   return redirect("/");
-    // }
+    if(this.state.loggedIn){
+      redirect("/user");
+    }
     return <div className="auth-wrapper">
             <div className="auth-inner">
               <form onSubmit={this.handleSubmit}>
