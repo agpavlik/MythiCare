@@ -1,13 +1,11 @@
-
-import "../styles/HomePage.css";
-import React, { Component } from "react";
+import Layout from '../components/layout'
+import "../styles/home.css";
+import React from "react";
 import {Link} from "react-router-dom";
 
-
-export default class Home extends Component {
-
-  render(){
-    return (
+const Home = () => {
+  return (
+    <Layout>
       <section className="home-section">
         <div className="home-box">
           <img className="logo" alt="logo image" />
@@ -41,8 +39,9 @@ export default class Home extends Component {
             </button>
           </Link>
         </div>
-
       </section>
-    )
-  }
+    </Layout>
+  )
 }
+
+export default Home
