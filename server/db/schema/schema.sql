@@ -5,9 +5,9 @@ CREATE TABLE users (
   first_name VARCHAR(255) NOT NULL,
   last_name VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL,
-  phone VARCHAR(255) NOT NULL,
-  city VARCHAR(255) NOT NULL,
-  country VARCHAR(255) NOT NULL,
+  phone VARCHAR(255),
+  city VARCHAR(255),
+  country VARCHAR(255),
   password VARCHAR(255) NOT NULL,
   profile_photo VARCHAR(255),
   isPetSitter BOOLEAN DEFAULT false
