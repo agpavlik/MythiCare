@@ -1,14 +1,15 @@
 import React from 'react';
 
-const PetSitterProfile = ({ name, age, experience }) => {
+const ProfilePage = ({ userInfo }) => {
   return (
     <div>
-      <h2>Profile</h2>
-      <p>Name: {name}</p>
-      <p>Age: {age}</p>
-      <p>Experience: {experience}</p>
+      <h1>Profile Page</h1>
+      <h2>{userInfo.firstName} {userInfo.lastName}</h2>
+      <p><strong>Address:</strong> {userInfo.address}</p>
+      <p><strong>Experience:</strong> {userInfo.experience}</p>
+      <p><strong>Contact Info:</strong> {userInfo.contactInfo}</p>
     </div>
   );
 };
 
-export default PetSitterProfile;
+export default ProfilePage;
