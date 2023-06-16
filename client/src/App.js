@@ -11,6 +11,7 @@ import Login from './pages/login'
 import Register from './pages/register'
 import About from './pages/about'
 import Sitters from './pages/sitters'
+import "./App.css";
 import { useSelector } from 'react-redux'
 
 const PrivateRoutes = () => {

@@ -2,24 +2,26 @@ import Layout from '../components/layout'
 import "../styles/home.css";
 import React from "react";
 import {Link} from "react-router-dom";
+import pop from "./pop.mkv";
 
 const Home = () => {
   return (
-    <Layout>
       <section className="home-section">
+        <video className='video' src ={pop} autoPlay loop muted/>
+        <div className="home-container">
         <div className="home-box">
-          <img className="logo" alt="logo image" />
+          <img className="logo" src="logo-main.png" alt="logo image" />
         </div>
 
         <div className="home-box">
           <Link to={"/sitters"} className="pages-link">
             <button type="button" className="button-home-page">
-              Find a sitter
+              <h3>Find a sitter</h3>
             </button>
           </Link>
           <Link to={"/register"} className="pages-link">
             <button type="button" className="button-home-page">
-              Become a sitter
+              <h3>Become a sitter</h3>
             </button>
           </Link>
         </div>
@@ -39,8 +41,8 @@ const Home = () => {
             </button>
           </Link>
         </div>
+        </div>
       </section>
-    </Layout>
   )
 }
 
