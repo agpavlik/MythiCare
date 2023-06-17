@@ -15,7 +15,7 @@ const connObj = {
 	port: DB_PORT,
 	database: DB_DATABASE,
 }
-
+console.log("++++++++", connObj)
 const runMigrations = async db => {
 	const migrations = await fs.readdir(SCHEMA_PATH);
 	for (migration of migrations) {
