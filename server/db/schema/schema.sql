@@ -68,8 +68,12 @@ CREATE TABLE bookings (
   start_date DATE NOT NULL,
   end_date DATE NOT NULL,
   fee INTEGER NOT NULL,
-  is_complete BOOLEAN DEFAULT false
+  is_complete BOOLEAN DEFAULT false,
+  status VARCHAR(20) DEFAULT 'pending',
+  sitter_accepted BOOLEAN DEFAULT false,
+  sitter_rejected BOOLEAN DEFAULT false
 );
+
 
 CREATE TABLE reviews (
   id SERIAL PRIMARY KEY NOT NULL,
