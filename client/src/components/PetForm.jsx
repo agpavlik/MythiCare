@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+axios.defaults.withCredentials = true
 
 const PetForm = () => {
   const [petData, setPetData] = useState({
@@ -22,7 +23,8 @@ const PetForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('/api/pets', petData);
+      console.log("pet data", petData);
+      return await axios.post('http://localhost:8082/pets', petData);
       console.log('Pet profile added:', petData);
       // Reset the form or display a success message
     } catch (error) {

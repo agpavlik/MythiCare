@@ -4,6 +4,7 @@ import { fetchProtectedInfo, onLogout } from '../api/auth'
 import Layout from '../components/layout'
 import { unauthenticateUser } from '../redux/slices/authSlice'
 import "../styles/user.css";
+import {Link} from "react-router-dom";
 
 
 const User = () => {
@@ -51,9 +52,11 @@ const User = () => {
               <div className="create-profile">
                 <h3> Pet Owner Profile </h3>
               </div>
+              <Link to={"/SitterForm"}>
               <div className="create-profile">
                 <h3> Pet Sitter Profile </h3>
               </div>
+              </Link>
             </div>
             <button onClick={() => logout()} className='btn btn-primary'>
               Logout

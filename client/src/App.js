@@ -14,6 +14,11 @@ import Login from './pages/login'
 import Register from './pages/register'
 import About from './pages/about'
 import Sitters from './pages/sitters'
+import PetForm from './components/PetForm'
+import PetProfile from './components/PetProfile'
+import SitterForm from './components/SitterForm'
+
+
 //import {petSitters} from '.'
 
 const PrivateRoutes = () => {
@@ -35,6 +40,9 @@ const App = () => {
         <Route path='/' element={<Home />} />
         <Route path='/sitters' element={<Sitters />} />
         <Route path='/about' element={<About />} />
+        <Route path='/petform' element={<PetForm />} />
+        <Route path='/petprofile' element={<PetProfile />} />
+
 
         <Route element={<PrivateRoutes />}>
           <Route path='/user' element={<User />} />
