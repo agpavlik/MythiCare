@@ -2,15 +2,27 @@ import Layout from '../components/layout'
 import "../styles/sitters.css";
 import React from "react";
 import {Link} from "react-router-dom";
+import SitterItem from "../components/sitterItem"
 
-const Sitters = () => {
+const Sitters = (props) => {
+
+
+  // const parsedSittersId = props.pet_sitters.map((pet_sitter) => {
+  //   return (
+  //     <SitterItem
+  //     {... pet_sitter}
+  //     key = {pet_sitter.id}
+  //     />
+  //   )
+  // });
+
   return (
     <Layout>
-
-<h1> This is a sitters page </h1>
-
+      <section className="sitters-section">
+        <p>This is a sitter page</p>
+      </section>
     </Layout>
   )
 }
 
-export default Sitters
+export default Sitters;

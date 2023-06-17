@@ -13,13 +13,13 @@ const Home = () => {
           <img className="logo" src="logo-main.png" alt="logo image" />
         </div>
 
-        <div className="home-box">
-          <Link to={"/sitters"} className="pages-link">
+        <div className="home-box-user">
+          <Link to={"/sitters"}>
             <button type="button" className="button-home-page">
               <h3>Find a sitter</h3>
             </button>
           </Link>
-          <Link to={"/register"} className="pages-link">
+          <Link to={"/register"}>
             <button type="button" className="button-home-page">
               <h3>Become a sitter</h3>
             </button>
@@ -46,4 +46,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Home;

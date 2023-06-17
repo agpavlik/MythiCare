@@ -1,0 +1,24 @@
+
+
+.register-main {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+}
+
+.register-input {
+  width: 450px;
+  background-color: grey;
+  padding: 5px 5px 20px;
+  margin: 10px 0;
+  border-radius: 7px;
+}
+
+@media screen and (max-width: 768px) {
+  .register-input {
+  width: 350px;
+  }
+}

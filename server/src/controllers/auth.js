@@ -31,7 +31,7 @@ exports.register = async (req, res) => {
 
     return res.status(201).json({
       success: true,
-      message: 'The registraion was succefull',
+      message: 'You registered successfully. Please, login.',
     })
   } catch (error) {
     console.log(error.message)
@@ -54,7 +54,7 @@ exports.login = async (req, res) => {
 
     return res.status(200).cookie('token', token, { httpOnly: true }).json({
       success: true,
-      message: 'Logged in succefully',
+      message: 'Logged in successfully',
     })
   } catch (error) {
     console.log(error.message)
@@ -78,7 +78,7 @@ exports.logout = async (req, res) => {
   try {
     return res.status(200).clearCookie('token', { httpOnly: true }).json({
       success: true,
-      message: 'Logged out succefully',
+      message: 'Logged out successfully',
     })
   } catch (error) {
     console.log(error.message)

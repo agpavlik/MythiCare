@@ -3,6 +3,8 @@ import { useDispatch } from 'react-redux'
 import { fetchProtectedInfo, onLogout } from '../api/auth'
 import Layout from '../components/layout'
 import { unauthenticateUser } from '../redux/slices/authSlice'
+import "../styles/user.css";
+
 
 const User = () => {
   const dispatch = useDispatch()
@@ -43,29 +45,23 @@ const User = () => {
   ) : (
     <div>
       <Layout>
-        <h1>Create profile</h1>
-        <h2>{protectedData}</h2>
-
-        <div>
-          <h3> Pet Owner Profile </h3>
-          <div>
-
-          </div>
+        <div className="user-main">
+            <h2>Create profile depending on your porposes</h2>
+            <div className="user-box">
+              <div className="create-profile">
+                <h3> Pet Owner Profile </h3>
+              </div>
+              <div className="create-profile">
+                <h3> Pet Sitter Profile </h3>
+              </div>
+            </div>
+            <button onClick={() => logout()} className='btn btn-primary'>
+              Logout
+            </button>
         </div>
-
-        <div>
-          <h3> Pet Sitter Profile </h3>
-          <div>
-            
-          </div>
-        </div>
-
-        <button onClick={() => logout()} className='btn btn-primary'>
-          Logout
-        </button>
       </Layout>
     </div>
   )
 }
 
-export default User
+export default User;
