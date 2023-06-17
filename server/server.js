@@ -97,6 +97,10 @@ const pool = new Pool({
   port: 5432,
 });
 
+app.get("/test", (req, res)=>{
+	console.log("Testing routes ", req.params.id);
+});
+
 // Create a new pet profile
 app.post('/api/pets', async (req, res) => {
   try {
@@ -127,7 +131,7 @@ app.get('/api/pets', async (req, res) => {
 // Retrieve a specific pet profile by ID
 app.get('/api/pets/:id', async (req, res) => {
   try {
-
+	console.log("TEST Rohit ", req.params.id);
     const { id } = req.params;
     const query = 'SELECT * FROM pets WHERE id = $1';
     const values = [id];
@@ -224,7 +228,7 @@ app.get('/api/sitters', async (req, res) => {
     res.status(500
 		).json({ error: 'Error retrieving sitter profiles' });
 		}
-		});
+	});
 		
 		// Retrieve a specific sitter profile by ID
 		app.get('/api/sitters/:id', async (req, res) => {

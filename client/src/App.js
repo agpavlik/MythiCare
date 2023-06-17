@@ -13,7 +13,7 @@ import Home from './pages/home'
 import Login from './pages/login'
 import Register from './pages/register'
 import About from './pages/about'
-import Sitters from './pages/sitters'
+import AllSitters from './pages/allsitters'
 import PetForm from './components/PetForm'
 import PetProfile from './components/PetProfile'
 import SitterForm from './components/SitterForm'
@@ -38,10 +38,11 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/sitters' element={<Sitters />} />
+        <Route path='/allsitters' element={<AllSitters />} />
         <Route path='/about' element={<About />} />
         <Route path='/petform' element={<PetForm />} />
         <Route path='/petprofile' element={<PetProfile />} />
+        <Route path='/sitterform' element={<SitterForm />} />
 
 
         <Route element={<PrivateRoutes />}>

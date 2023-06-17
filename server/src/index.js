@@ -17,10 +17,12 @@ app.use(passport.initialize())
 //import routes
 const authRoutes = require('./routes/auth')
 const petRoutes = require('./routes/pets')
+const sitterRoutes = require('./routes/sitters')
 
 //initialize routes
 app.use('/api', authRoutes)
 app.use('/pets', petRoutes)
+app.use('/sitters', sitterRoutes)
 
 
 //app start
