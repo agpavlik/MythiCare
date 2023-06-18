@@ -125,7 +125,7 @@ const Register = () => {
             <div style={{ color: 'red', margin: '10px 0' }}>{error}</div>
             <div style={{ color: 'green', margin: '10px 0' }}>{success}</div>
 
-            <button type='submit' className='btn btn-primary'>
+            <button type='submit' className='button-29'>
               Submit
             </button>
           </form>
