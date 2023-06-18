@@ -4,7 +4,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 import SitterItem from "../components/sitterItem"
 
-const Sitters = (props) => {
+const AllSitters = (props) => {
 
 
   // const parsedSittersId = props.pet_sitters.map((pet_sitter) => {
@@ -25,4 +25,4 @@ const Sitters = (props) => {
   )
 }
 
-export default Sitters;
+export default AllSitters;

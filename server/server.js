@@ -97,6 +97,10 @@ const pool = new Pool({
   port: 5432,
 });
 
+app.get("/test", (req, res)=>{
+	console.log("Testing routes ", req.params.id);
+});
+
 // Create a new pet profile
 app.post('/api/pets', async (req, res) => {
   try {
@@ -104,7 +108,7 @@ app.post('/api/pets', async (req, res) => {
     const query =
       'INSERT INTO pets (photo, name, age, size, temperament, feeding_info, activity_needs, medical_conditions, notes) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *';
     const values = [photo, name, age, size, temperament, feedingInfo, activityNeeds, medicalConditions, notes];
-    const result = await pool.query(query, values);
+    const result = await db.query(query, values);
     res.json(result.rows[0]);
   } catch (error) {
     console.error('Error creating pet profile:', error);
@@ -127,7 +131,7 @@ app.get('/api/pets', async (req, res) => {
 // Retrieve a specific pet profile by ID
 app.get('/api/pets/:id', async (req, res) => {
   try {
-
+	console.log("TEST Rohit ", req.params.id);
     const { id } = req.params;
     const query = 'SELECT * FROM pets WHERE id = $1';
     const values = [id];
@@ -224,7 +228,7 @@ app.get('/api/sitters', async (req, res) => {
     res.status(500
 		).json({ error: 'Error retrieving sitter profiles' });
 		}
-		});
+	});
 		
 		// Retrieve a specific sitter profile by ID
 		app.get('/api/sitters/:id', async (req, res) => {

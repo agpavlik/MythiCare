@@ -1,23 +1,25 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Layout from '../components/layout'
+axios.defaults.withCredentials = true
 
 const SitterForm = () => {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [address, setAddress] = useState('');
+  // const [firstName, setFirstName] = useState('');
+  // const [lastName, setLastName] = useState('');
+  const [bio, setBios] = useState('');
   const [experience, setExperience] = useState('');
-  const [contactInfo, setContactInfo] = useState('');
+  const [nightly_rate, setNightlyRates] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('/api/sitters', {
-        firstName,
-        lastName,
-        address,
+      const response = await axios.post('http://localhost:8082/sitters', {
+        // firstName,
+        // lastName,
+        bio,
         experience,
-        contactInfo,
+        nightly_rate,
       });
 
       console.log(response.data); // Handle the response as needed
@@ -27,37 +29,29 @@ const SitterForm = () => {
   };
 
   return (
-    <div>
-      <h1>Sitter Form</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          First Name:
-          <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
-        </label>
-        <br />
-        <label>
-          Last Name:
-          <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} />
-        </label>
-        <br />
-        <label>
-          Address:
-          <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} />
-        </label>
-        <br />
-        <label>
-          Experience:
-          <input type="text" value={experience} onChange={(e) => setExperience(e.target.value)} />
-        </label>
-        <br />
-        <label>
-          Contact Info:
-          <input type="text" value={contactInfo} onChange={(e) => setContactInfo(e.target.value)} />
-        </label>
-        <br />
-        <button type="submit">Save</button>
-      </form>
-    </div>
+    <Layout>
+      <div>
+        <h1>Sitter Form</h1>
+        <form onSubmit={handleSubmit}>
+          <label>
+            Bio:
+            <input type="text" value={bio} onChange={(e) => setBios(e.target.value)} />
+          </label>
+          <br />
+          <label>
+            Experience:
+            <input type="text" value={experience} onChange={(e) => setExperience(e.target.value)} />
+          </label>
+          <br />
+          <label>
+            Rate:
+            <input type="text" value={nightly_rate} onChange={(e) => setNightlyRates(e.target.value)} />
+          </label>
+          <br />
+          <button type="submit">Save</button>
+        </form>
+      </div>
+    </Layout>
   );
 };
 
