@@ -3,21 +3,83 @@ const router = express.Router();
 const sitters = require('../db/queries/sitters')
 const db = require('../configs/db.config');
 
-
-
 router.get('/', (req, res) => {
-  sitters.getAllSitters().then(data => {
-    console.log(data);
-    res.json({sitters: data});
-  })
+  try {
+    sitters.getAllSitters().then(data => {
+      console.log(data);
+      res.json({sitters: data});
+    })
+  } catch {
+    console.error('Error retrieving sitter profiles:', error);
+    res.status(500
+		).json({ error: 'Error retrieving sitter profiles' });
+  }
 });
 
+ // Retrieve a specific sitter profile by ID
 router.get('/:id', (req, res) => {
-  const sitterId = req.params.id;
-  sitters.getSitterById(sitterId).then(data => {
-    console.log(data);
-    res.json({sitter: data});
-  })
+  try {
+    const sitterId = req.params.id;
+    sitters.getSitterById(sitterId).then(data => {
+      console.log(data);
+      res.json({sitter: data});
+    })
+  } catch {
+    console.error('Error retrieving sitter profile:', error);
+    res.status(500).json({ error: 'Error retrieving sitter profile' });
+  }
+});
+
+// Create a new sitter profile
+router.post('/', async (req, res) => {
+  try {
+    const { name, age, experience, availability } = req.body;
+    const query = 'INSERT INTO sitters (name, age, experience, availability) VALUES ($1, $2, $3, $4) RETURNING *';
+    const values = [name, age, experience, availability];
+    const result = await pool.query(query, values);
+    res.json(result.rows[0]);
+  } catch (error) {
+    console.error('Error creating sitter profile:', error);
+    res.status(500).json({ error: 'Error creating sitter profile' });
+  }
+});
+
+// Update a specific sitter profile by ID
+router.put('/:id', async (req, res) => {
+  try {
+  const { id } = req.params;
+  const { name, age, experience, availability } = req.body;
+  const query =
+  'UPDATE sitters SET name = $1, age = $2, experience = $3, availability = $4 WHERE id = $5 RETURNING *';
+  const values = [name, age, experience, availability, id];
+  const result = await pool.query(query, values);
+  if (result.rows.length === 0) {
+  res.status(404).json({ error: 'Sitter profile not found' });
+  } else {
+  res.json(result.rows[0]);
+  }
+  } catch (error) {
+  console.error('Error updating sitter profile:', error);
+  res.status(500).json({ error: 'Error updating sitter profile' });
+  }
+});
+  
+// Delete a specific sitter profile by ID
+router.delete('/:id', async (req, res) => {
+  try {
+  const { id } = req.params;
+  const query = 'DELETE FROM sitters WHERE id = $1 RETURNING *';
+  const values = [id];
+  const result = await pool.query(query, values);
+  if (result.rows.length === 0) {
+  res.status(404).json({ error: 'Sitter profile not found' });
+  } else {
+  res.json({ message: 'Sitter profile deleted successfully' });
+  }
+  } catch (error) {
+  console.error('Error deleting sitter profile:', error);
+  res.status(500).json({ error: 'Error deleting sitter profile' });
+  }
 });
 
 
