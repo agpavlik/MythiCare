@@ -47,22 +47,40 @@ const User = () => {
     <div>
       <Layout>
         <div className="user-main">
-            <h2>Create profile depending on your porposes</h2>
-            <div className="user-box">
-              <Link to={"/PetForm"}>
-                <div className="create-profile">
-                  <h3> Pet Owner Profile </h3>
-                </div>
-              </Link>
-              <Link to={"/SitterForm"}>
-                <div className="create-profile">
-                  <h3> Pet Sitter Profile </h3>
-                </div>
-              </Link>
+          <div className="user-info">
+            <h4>User info</h4>
+            <div className="user-detailes">
+              <h5>First Name</h5>
             </div>
-            <button onClick={() => logout()} className='btn btn-primary'>
+            <div className="user-detailes">
+              <h5>Last Name</h5>
+            </div>
+            <div className="user-detailes">
+              <h5>Phone</h5>
+            </div>
+            <div className="user-detailes">
+              <h5>Email</h5>
+            </div>
+          </div>
+          <div className = "user-pets">
+            <h4>Your pets profiles</h4>
+          </div>
+          <div className="user-box">
+            <h4>Create profile depending on your porposes</h4>
+            <Link to={"/PetForm"} className="user-link">
+              <div className="create-profile">
+                <h5> Create Pet Profile </h5>
+              </div>
+            </Link>
+            <Link to={"/SitterForm"} className="user-link">
+              <div className="create-profile">
+                <h5> Create Pet Sitter Profile </h5>
+              </div>
+            </Link>
+          </div>
+            {/* <button onClick={() => logout()} className='btn btn-primary'>
               Logout
-            </button>
+            </button> */}
         </div>
       </Layout>
     </div>

@@ -49,7 +49,7 @@ const Login = () => {
                 id='email'
                 name='email'
                 value={values.email}
-                placeholder='test@gmail.com'
+                placeholder='youremail@gmail.com'
                 required
               />
             </div>
@@ -72,7 +72,7 @@ const Login = () => {
 
             <div style={{ color: 'red', margin: '10px 0' }}>{error}</div>
 
-            <button type='submit' className='btn btn-primary'>
+            <button type='submit' className='button-29'>
               Submit
             </button>
           </form>

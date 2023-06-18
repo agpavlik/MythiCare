@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Layout from '../components/layout'
+import "../styles/SitterForm.css";
 axios.defaults.withCredentials = true
 
 const SitterForm = () => {
@@ -30,26 +31,35 @@ const SitterForm = () => {
 
   return (
     <Layout>
-      <div>
-        <h1>Sitter Form</h1>
-        <form onSubmit={handleSubmit}>
-          <label>
-            Bio:
-            <input type="text" value={bio} onChange={(e) => setBios(e.target.value)} />
-          </label>
-          <br />
-          <label>
-            Experience:
-            <input type="text" value={experience} onChange={(e) => setExperience(e.target.value)} />
-          </label>
-          <br />
-          <label>
-            Rate:
-            <input type="text" value={nightly_rate} onChange={(e) => setNightlyRates(e.target.value)} />
-          </label>
-          <br />
-          <button type="submit">Save</button>
-        </form>
+      <div className = "sitter-main">
+        <div className = "sitter-input">
+          <form onSubmit={handleSubmit} className="container mt-3">
+            <h2>Sitter Form</h2>
+
+            <div className='mb-3'>
+              <label htmlFor='bio' className='form-label'>
+                Bio
+              </label>
+              <input type="text" value={bio} onChange={(e) => setBios(e.target.value)} className='form-control' required/>
+            </div>
+
+            <div className='mb-3'>
+              <label className='form-label'>
+                Experience
+              </label>
+              <input type="text" value={experience} onChange={(e) => setExperience(e.target.value)} className='form-control'/>
+            </div>
+
+            <div className='mb-3'>
+              <label className='form-label'>
+                Rate
+              </label>
+              <input type="text" value={nightly_rate} onChange={(e) => setNightlyRates(e.target.value)} className='form-control'/>
+            </div>
+
+            <button type="submit" className='button-29'>Save</button>
+          </form>
+        </div>
       </div>
     </Layout>
   );

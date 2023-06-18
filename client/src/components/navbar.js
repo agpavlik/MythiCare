@@ -1,9 +1,11 @@
 import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 
+
 import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { fetchProtectedInfo, onLogout } from '../api/auth'
+import "../styles/navbar.css";
 import { unauthenticateUser } from '../redux/slices/authSlice'
 
 
@@ -40,7 +42,7 @@ const Navbar = () => {
           </div>
         ) : (
           <div>
-            <NavLink to='/login'>
+            <NavLink to='/login' className='mx-3'>
               <span>Login</span>
             </NavLink>
 
