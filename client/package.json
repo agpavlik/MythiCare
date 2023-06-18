@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:8080",
+  "proxy": "http://localhost:8082",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "@fullcalendar/daygrid": "^6.1.8",

@@ -31,8 +31,6 @@ const RestrictedRoutes = () => {
   return <>{!isAuth ? <Outlet /> : <Navigate to='/user' />}</>
 }
 
-
-
 function App() {
 
   const sitterId = 1;
@@ -45,7 +43,7 @@ function App() {
         <Route path='/sitters' element={<AllSitters />} />
         <Route path='/about' element={<About />} />
         <Route path='/petform' element={<PetForm />} />
-        <Route path='/petprofile' element={<PetProfile />} />
+        <Route path='/petprofile/:id' element={<PetProfile />} />
         <Route path='/sitterform' element={<SitterForm />} />
 
 

@@ -1,5 +1,11 @@
 const db = require('../../configs/db.config');
 
+const getAllOwners = id => {
+  return db.query('SELECT * from pet_owners;').then(data => {
+    return data.rows;
+  })
+}
+
 const getPetNameByOwner = id => {
   return db.query(`
     SELECT pets.id AS pet_id, pets.name, pet_owners.id AS owner_id
@@ -20,4 +26,4 @@ const getPetByOwner = id => {
     })
 }
 
-module.exports = {getPetByOwner, getPetNameByOwner}
+module.exports = {getAllOwners, getPetByOwner, getPetNameByOwner}
