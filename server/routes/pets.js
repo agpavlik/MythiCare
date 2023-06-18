@@ -17,7 +17,7 @@ router.post('/', async (req, res) => {
   try {
     const { photo, name, age, size, temperament, feedingInfo, activityNeeds, medicalConditions, notes } = req.body;
     const query =
-      'INSERT INTO pets (photo, name, age, size, temperament, feeding_info, activity_needs, medical_conditions, notes) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *';
+      'INSERT INTO pets (profile_photo, name, age, size, temperament, feeding_instructions, activity_needs, medical_conditions, other_notes) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *';
     const values = [photo, name, age, size, temperament, feedingInfo, activityNeeds, medicalConditions, notes];
     const result = await db.query(query, values);
     res.json(result.rows[0]);
@@ -47,7 +47,7 @@ router.put('/:id', async (req, res) => {
     const { id } = req.params;
     const { photo, name, age, size, temperament, feedingInfo, activityNeeds, medicalConditions, notes } = req.body;
     const query =
-      'UPDATE pets SET photo = $1, name = $2, age = $3, size = $4, temperament = $5, feeding_info = $6, activity_needs = $7, medical_conditions = $8, notes = $9 WHERE id = $10 RETURNING *';
+      'UPDATE pets SET profile_photo = $1, name = $2, age = $3, size = $4, temperament = $5, feeding_instructions = $6, activity_needs = $7, medical_conditions = $8, other_notes = $9 WHERE id = $10 RETURNING *';
     const values = [photo, name, age, size, temperament, feedingInfo, activityNeeds, medicalConditions, notes, id];
     const result = await pool.query(query, values);
     if (result.rows.length === 0) {

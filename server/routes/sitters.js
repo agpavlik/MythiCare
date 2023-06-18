@@ -33,10 +33,10 @@ router.get('/:id', (req, res) => {
 // Create a new sitter profile
 router.post('/', async (req, res) => {
   try {
-    const { name, age, experience, availability } = req.body;
-    const query = 'INSERT INTO sitters (name, age, experience, availability) VALUES ($1, $2, $3, $4) RETURNING *';
-    const values = [name, age, experience, availability];
-    const result = await pool.query(query, values);
+    const { bio, experience, nightly_rate } = req.body;
+    const query = 'INSERT INTO pet_sitters (bio, experience, nightly_rate) VALUES ($1, $2, $3, $4) RETURNING *';
+    const values = [bio, experience, nightly_rate];
+    const result = await db.query(query, values);
     res.json(result.rows[0]);
   } catch (error) {
     console.error('Error creating sitter profile:', error);
@@ -48,11 +48,11 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
   try {
   const { id } = req.params;
-  const { name, age, experience, availability } = req.body;
+  const { bio, experience, nightly_rate } = req.body;
   const query =
-  'UPDATE sitters SET name = $1, age = $2, experience = $3, availability = $4 WHERE id = $5 RETURNING *';
-  const values = [name, age, experience, availability, id];
-  const result = await pool.query(query, values);
+  'UPDATE pet_sitters SET bio = $1, experience = $2, nightly_rate = $3 WHERE id = $4 RETURNING *';
+  const values = [bio, experience, nightly_rate];
+  const result = await db.query(query, values);
   if (result.rows.length === 0) {
   res.status(404).json({ error: 'Sitter profile not found' });
   } else {
@@ -70,7 +70,7 @@ router.delete('/:id', async (req, res) => {
   const { id } = req.params;
   const query = 'DELETE FROM sitters WHERE id = $1 RETURNING *';
   const values = [id];
-  const result = await pool.query(query, values);
+  const result = await db.query(query, values);
   if (result.rows.length === 0) {
   res.status(404).json({ error: 'Sitter profile not found' });
   } else {
@@ -81,6 +81,7 @@ router.delete('/:id', async (req, res) => {
   res.status(500).json({ error: 'Error deleting sitter profile' });
   }
 });
+
 
 
 // Endpoint to set the availability for a pet sitter

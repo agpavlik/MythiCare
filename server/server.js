@@ -47,7 +47,7 @@ app.use(
     saveUninitialized: false,
   })
   );
-  app.use(morgan(ENVIRONMENT));
+  // app.use(morgan(ENVIRONMENT));
   app.use(bodyParser.json());
   
   // Database connection setup
