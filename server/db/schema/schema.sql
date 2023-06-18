@@ -23,7 +23,14 @@ CREATE TABLE pet_sitters (
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   bio TEXT,
   experience INTEGER,
-  nightly_rate INTEGER
+  nightly_rate INTEGER,
+  monday_available BOOLEAN DEFAULT FALSE,
+  tuesday_available BOOLEAN DEFAULT FALSE,
+  wednesday_available BOOLEAN DEFAULT FALSE,
+  thursday_available BOOLEAN DEFAULT FALSE,
+  friday_available BOOLEAN DEFAULT FALSE,
+  saturday_available BOOLEAN DEFAULT FALSE,
+  sunday_available BOOLEAN DEFAULT FALSE
 );
 
 CREATE TABLE pet_types (
@@ -61,8 +68,12 @@ CREATE TABLE bookings (
   start_date DATE NOT NULL,
   end_date DATE NOT NULL,
   fee INTEGER NOT NULL,
-  is_complete BOOLEAN DEFAULT false
+  is_complete BOOLEAN DEFAULT false,
+  status VARCHAR(20) DEFAULT 'pending',
+  sitter_accepted BOOLEAN DEFAULT false,
+  sitter_rejected BOOLEAN DEFAULT false
 );
+
 
 CREATE TABLE reviews (
   id SERIAL PRIMARY KEY NOT NULL,

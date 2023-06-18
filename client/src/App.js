@@ -33,7 +33,11 @@ const RestrictedRoutes = () => {
 
 
 
-const App = () => {
+function App() {
+
+  const sitterId = 1;
+  const ownerId = 1;
+
   return (
     <BrowserRouter>
       <Routes>
@@ -60,5 +64,7 @@ const App = () => {
   )
 }
 
-export default App
+export default App;
+
+
 
