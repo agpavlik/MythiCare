@@ -42,7 +42,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/allsitters' element={<AllSitters />} />
+        <Route path='/sitters' element={<AllSitters />} />
         <Route path='/about' element={<About />} />
         <Route path='/petform' element={<PetForm />} />
         <Route path='/petprofile' element={<PetProfile />} />

@@ -9,7 +9,7 @@ const PetProfile = ({ pet }) => {
   useEffect(() => {
     const fetchPets = async () => {
       try {
-        const response = await axios.get(`http://localhost:8082/test/1`);
+        const response = await axios.get(`localhost:8080/pets`);
         console.log("response:", response)
         setPets(response);
       } catch (error) {
@@ -17,8 +17,7 @@ const PetProfile = ({ pet }) => {
       }
     };
     fetchPets();
-  }, [1]);
-
+  }, []);
 
   return (
     <div>

@@ -3,8 +3,6 @@ const router = express.Router();
 const pets = require('../../db/queries/pets')
 const db = require('../../configs/db.config');
 
-
-
 router.get('/', (req, res) => {
   pets.getAllPets().then(data => {
     console.log(data);
