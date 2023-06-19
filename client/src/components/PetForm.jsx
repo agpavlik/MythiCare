@@ -25,7 +25,7 @@ const PetForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      return await axios.post('http://localhost:8082/pets', petData);
+      return await axios.post('http://localhost:8080/pets', petData);
       console.log('Pet profile added:', petData);
       // Reset the form or display a success message
     } catch (error) {

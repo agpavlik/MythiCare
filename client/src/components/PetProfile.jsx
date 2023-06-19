@@ -11,7 +11,7 @@ const PetProfile = () => {
   useEffect(() => {
     const fetchPet = async () => {
       try {
-        const response = await axios.get(`http://localhost:8082/pets/${id}`);
+        const response = await axios.get(`http://localhost:8080/pets/${id}`);
         console.log("response:", response.data.pet) 
         setPet(response.data.pet[0]);
       } catch (error) {
