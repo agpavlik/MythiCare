@@ -1,32 +1,40 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
 import AvailabilityCalendar from './AvailabilityCalendar';
 
 const SittersPage = () => {
-  const [sitterId, setSitterId] = useState('');
+  const [sitter, setSitter] = useState([])
+  const {id} = useParams()
 
   useEffect(() => {
-    const fetchSitterId = async () => {
+    const fetchSitter = async () => {
       try {
-        const response = await axios.get('/sitters/:id');
-        setSitterId(response.data.sitterId);
+        const response = await axios.get(`/sitters/${id}`);
+        setSitter(response.data.sitter[0])
       } catch (error) {
-        // Handle the error gracefully
+        console.error('Error fetching sitter:', error);
       }
     };
 
-    fetchSitterId();
-  }, []);
-
-  useEffect(() => {
-    console.log(sitterId)
-  }, [sitterId])
+    fetchSitter();
+  }, [id]);
 
   return (
     <div>
       <h1>Pet Sitter Profile</h1>
-      {/* Render other components and information for the pet sitter profile */}
-      <AvailabilityCalendar sitterId={sitterId} />
+      <article id='sitter'>
+        <img src={sitter.profile_photo} alt={sitter.first_name} className="sitter--photo"/>
+        <div className="sitter--info">
+          <p>{sitter.first_name} {sitter.last_name}</p>
+          <div>{sitter.bio}</div>
+          <div>{sitter.city}, {sitter.country}</div>
+          Experience: {sitter.experience} years
+          <div>from ${sitter.nightly_rate} per night</div>
+          <p>Avg. Rating: {sitter.avg_rating}</p>
+        </div>
+    </article>
+      {/* <AvailabilityCalendar sitterId={sitter.id} /> */}
     </div>
   );
 };
