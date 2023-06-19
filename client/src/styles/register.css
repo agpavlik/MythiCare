@@ -24,6 +24,10 @@
   width: 350px;
   }
 }
+.form-control {
+  border-color: #5468ff;
+  border-style: solid;
+}
 
 * .button-29 {
   align-items: center;
@@ -70,3 +74,5 @@
   box-shadow: #3c4fe0 0 3px 7px inset;
   transform: translateY(2px);
 }
+
+
