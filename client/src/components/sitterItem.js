@@ -1,31 +1,28 @@
 // import Layout from '../components/layout'
-// import "../styles/sitterItem.css";
-// import React from "react";
-// import {Link} from "react-router-dom";
+import "../styles/sitterItem.css";
+import React from "react";
+import {Link} from "react-router-dom";
 
-// const SitterItem = (props) => {
+const SitterItem = (props) => {
+
+  const {profile_photo, first_name, last_name, bio, experience, city, country, nightly_rate, avg_rating} = props;
 
 
-// return (
-//   <div className = "sitter-item" key={props.pets_sitter.id}>
-//     <div className = "sitter-photo">
-//       <img src={props.user.profile_photo} alt="Sitter Image"/>
-//     </div>
-//     <div className = "sitter-detailes">
-//       <div className = "sitter-info"><p>{props.user.first_name}</p></div>
-//       <div className = "sitter-info"><p>{props.user.last_name}</p></div>
-//       <div className = "sitter-info"><p>{props.user.email}</p></div>
-//     </div>
-//     <div className = "sitter-detailes">
-//       <div className = "sitter-info"><p>{props.user.phone}</p></div>
-//       <div className = "sitter-info"><p>{props.user.country}</p></div>
-//       <div className = "sitter-info"><p>{props.user.city}</p></div>
-//     </div>
-//     <div className="sitter-ratio">
-//       <p>{props.pet_sitters.nighty_rate}</p>
-//     </div>
-//   </div>
-//   )
-// };
+  return (
 
-// export default SitterItem;
+    <article id='sitter'>
+      <img src={profile_photo} alt={first_name} className="sitter--photo"/>
+      <div className="sitter--info">
+        <p>{first_name} {last_name}</p>
+        <div>{bio}</div>
+        <div>{city}, {country}</div>
+        Experience: {experience} years
+        <div>from ${nightly_rate} per night</div>
+        <p>Avg. Rating: {avg_rating}</p>
+      </div>
+    </article>
+  
+    )
+};
+
+export default SitterItem;

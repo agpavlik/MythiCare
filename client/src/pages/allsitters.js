@@ -1,34 +1,36 @@
 import Layout from '../components/layout'
 import "../styles/sitters.css";
 import React, {useState, useEffect} from "react";
-import axios from 'axios';
 import {Link} from "react-router-dom";
 import SitterItem from "../components/sitterItem"
 
-const AllSitters = (props) => {
+const AllSitters = ({sitters}) => {
 
-  const [sitters, setSitters] = useState(null);
+  if (sitters) {
+    const parsedSitters = sitters.map(sitter => {
+      return <SitterItem
+        profile_photo={sitter.profile_photo}
+        first_name={sitter.first_name}
+        last_name={sitter.last_name}
+        key={sitter.id}
+        sitterId={sitter.id}
+        bio={sitter.bio}
+        experience={sitter.experience}
+        city={sitter.city}
+        country={sitter.country}
+        nightly_rate={sitter.nightly_rate}
+        avg_rating={sitter.rating}
+      />
+    })
 
-  const fetchSitters = async () => {
-    try {
-      const response = await axios.get(`http://localhost:8080/sitters`);
-      console.log(response)
-      setSitters(response);
-    } catch (error) {
-      console.error('Error fetching availability:', error);
-    }
-  };
-  
-  fetchSitters();
-
-
-  return (
-    <Layout>
-      <section className="sitters-section">
-        <p>This is a sitter page</p>
-      </section>
-    </Layout>
-  )
+    return (
+      <Layout>
+        <section className="sitters-section">
+          {parsedSitters}
+        </section>
+      </Layout>
+    )
+  }
 }
 
 export default AllSitters;

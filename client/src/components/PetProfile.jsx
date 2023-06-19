@@ -22,8 +22,8 @@ const PetProfile = () => {
   }, [id]);
 
   // useEffect(() => {
-  //   console.log(pets)
-  // }, [pets])
+  //   console.log(pet)
+  // }, [pet])
 
   return (
     <div>
