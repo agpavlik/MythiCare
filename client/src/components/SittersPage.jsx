@@ -22,11 +22,10 @@ const SittersPage = () => {
 
   return (
     <div>
-      <h1>Pet Sitter Profile</h1>
+      <h2>{sitter.first_name} {sitter.last_name}</h2>
       <article id='sitter'>
         <img src={sitter.profile_photo} alt={sitter.first_name} className="sitter--photo"/>
         <div className="sitter--info">
-          <p>{sitter.first_name} {sitter.last_name}</p>
           <div>{sitter.bio}</div>
           <div>{sitter.city}, {sitter.country}</div>
           Experience: {sitter.experience} years
@@ -34,7 +33,7 @@ const SittersPage = () => {
           <p>Avg. Rating: {sitter.avg_rating}</p>
         </div>
     </article>
-      {/* <AvailabilityCalendar sitterId={sitter.id} /> */}
+      <AvailabilityCalendar sitterId={sitter.id} nightly_rate={sitter.nightly_rate}/>
     </div>
   );
 };

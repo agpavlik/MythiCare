@@ -4,7 +4,7 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import BookingRequest from './BookingRequest';
 
-const AvailabilityCalendar = ({ sitterId, ownerId }) => {
+const AvailabilityCalendar = ({ sitterId, ownerId, nightly_rate }) => {
   const [availability, setAvailability] = useState([]);
   const [selectedDates, setSelectedDates] = useState([]);
   const [nightlyRate, setNightlyRate] = useState(0);
@@ -17,20 +17,21 @@ const AvailabilityCalendar = ({ sitterId, ownerId }) => {
     const fetchAvailability = async () => {
       try {
         const response = await axios.get(`/sitters/${sitterId}/availability`);
+        console.log(response)
         setAvailability(response.data.availability);
       } catch (error) {
         console.error('Error fetching availability:', error);
       }
     };
 
-    const fetchNightlyRate = async () => {
-      try {
-        const response = await axios.get(`/sitters/${sitterId}/nightly_rate`);
-        setNightlyRate(response.data.nightlyRate);
-      } catch (error) {
-        console.error('Error fetching nightly rate:', error);
-      }
-    };
+    // const fetchNightlyRate = async () => {
+    //   try {
+    //     const response = await axios.get(`/sitters/${sitterId}/nightly_rate`);
+    //     setNightlyRate(response.data.nightlyRate);
+    //   } catch (error) {
+    //     console.error('Error fetching nightly rate:', error);
+    //   }
+    // };
 
     const fetchPets = async () => {
       try {
@@ -41,30 +42,31 @@ const AvailabilityCalendar = ({ sitterId, ownerId }) => {
       }
     };
 
-    const fetchBookingRequest = async () => {
-      try {
-        const response = await axios.get(`/sitters/${sitterId}/booking-requests`);
-        setBookingRequest(response.data.bookingRequest);
-      } catch (error) {
-        console.error('Error fetching booking request:', error);
-      }
-    };
+    // const fetchBookingRequest = async () => {
+    //   try {
+    //     const response = await axios.get(`/sitters/${sitterId}/booking-requests`);
+    //     setBookingRequest(response.data.bookingRequest);
+    //   } catch (error) {
+    //     console.error('Error fetching booking request:', error);
+    //   }
+    // };
 
     fetchAvailability();
-    fetchNightlyRate();
+    // fetchNightlyRate();
     fetchPets();
-    fetchBookingRequest();
+    // fetchBookingRequest();
   }, [sitterId, ownerId]);
 
   useEffect(() => {
     const calculateFee = () => {
       const numOfDays = selectedDates.length;
-      const calculatedFee = nightlyRate * numOfDays;
+      // const calculatedFee = nightlyRate * numOfDays;
+      const calculatedFee = {nightly_rate} * numOfDays;
       setFee(calculatedFee);
     };
 
     calculateFee();
-  }, [selectedDates, nightlyRate]);
+  }, [selectedDates, nightly_rate]);
 
   const handleDateSelect = (date) => {
     const selectedDate = new Date(date);
@@ -93,35 +95,34 @@ const AvailabilityCalendar = ({ sitterId, ownerId }) => {
     }
   };
 
-  const handleAcceptBooking = async () => {
-    try {
-      await axios.patch(`/sitters/bookings/${bookingRequest.id}`, {
-        sitterAccepted: true,
-        sitterRejected: false,
-      });
-      // Notify the pet owner about the acceptance via email email)
-      setBookingRequest(null);
-    } catch (error) {
-      console.error('Error accepting booking:', error);
-    }
-  };
+  // const handleAcceptBooking = async () => {
+  //   try {
+  //     await axios.patch(`/sitters/bookings/${bookingRequest.id}`, {
+  //       sitterAccepted: true,
+  //       sitterRejected: false,
+  //     });
+  //     // Notify the pet owner about the acceptance via email email)
+  //     setBookingRequest(null);
+  //   } catch (error) {
+  //     console.error('Error accepting booking:', error);
+  //   }
+  // };
 
-  const handleRejectBooking = async () => {
-    try {
-      await axios.patch(`/sitters/bookings/${bookingRequest.id}`, {
-        sitterAccepted: false,
-        sitterRejected: true,
-      });
-      // Notify the pet owner about the rejection via email)
-      setBookingRequest(null);
-    } catch (error) {
-      console.error('Error rejecting booking:', error);
-    }
-  };
+  // const handleRejectBooking = async () => {
+  //   try {
+  //     await axios.patch(`/sitters/bookings/${bookingRequest.id}`, {
+  //       sitterAccepted: false,
+  //       sitterRejected: true,
+  //     });
+  //     // Notify the pet owner about the rejection via email)
+  //     setBookingRequest(null);
+  //   } catch (error) {
+  //     console.error('Error rejecting booking:', error);
+  //   }
+  // };
 
   return (
     <div>
-      <h3>Availability Calendar</h3>
       <div>
         <label htmlFor="petSelect">Select Pet:</label>
         <select id="petSelect" value={selectedPet} onChange={(e) => setSelectedPet(e.target.value)}>
@@ -149,13 +150,13 @@ const AvailabilityCalendar = ({ sitterId, ownerId }) => {
       </div>
       <button onClick={handleSubmit}>Submit Booking</button>
 
-      {bookingRequest && (
+      {/* {bookingRequest && (
         <BookingRequest
           booking={bookingRequest}
           onAccept={handleAcceptBooking}
           onReject={handleRejectBooking}
         />
-      )}
+      )} */}
     </div>
   );
 };
