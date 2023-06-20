@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import AvailabilityCalendar from './AvailabilityCalendar';
+import Layout from '../components/layout'
+import "../styles/SittersPage.css";
 
 const SittersPage = () => {
   const [sitter, setSitter] = useState([])

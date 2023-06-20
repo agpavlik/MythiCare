@@ -4,6 +4,10 @@
   font-family: 'Milonga', cursive;
   }
 
+.mx-3:hover {
+  text-shadow: 1px 1px 2px #5468ff, 0 0 1em #a2adff, 0 0 0.2em #a2adff;
+}
+
 .navbar {
   background-image: radial-gradient(100% 100% at 100% 0, #e7eefd 0, #a2adff 100%);
   padding: 0;

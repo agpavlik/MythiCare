@@ -1,18 +1,43 @@
+
 #sitter {
   display: flex;
-  gap: 50px;
-  margin: 20px
+  flex-direction: row;
+  margin: 20px;
 }
 
-.sitter--photo {
-  border-radius: 50%;
-  width: 30%;
+.sitter-item-photo {
+  border-radius: 100%;
+  width: 125px;
+  height: 125px;
+  border-color: #5468ff;
+  border-style: ridge;
+  margin-left: 20px;
 }
 
-.sitter--info {
+.sitter-item-detailes {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  flex-wrap: wrap;
+  border-radius: 10px 10px 10px 10px;
+  height: 145px;
+  background-color:  #e7eefd;
+  border-color: #5468ff;
+  border-style: ridge;
+  width: 100%;
+  margin: 0 50;
+  padding: 6px 20px;
+  margin: 0 30px;
+}
+
+.sitter-item-info {
+  margin: 7px 5px;
+}
+
+.sitter-item-link {
+  text-decoration: none !important;
+  cursor: pointer;
+  color: black;
+  font-family: 'Milonga', cursive;
 }
 
 

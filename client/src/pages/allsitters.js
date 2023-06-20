@@ -3,6 +3,7 @@ import "../styles/sitters.css";
 // import React, {useState, useEffect} from "react";
 // import {Link} from "react-router-dom";
 import SitterItem from "../components/sitterItem"
+import "../styles/allsitters.css"
 
 const AllSitters = ({sitters}) => {
 
@@ -25,10 +26,9 @@ const AllSitters = ({sitters}) => {
 
     return (
       <Layout>
-        <section className="sitters-section">
-          Sitters
-          {parsedSitters}
-        </section>
+          <div className="allsitters-main">
+            {parsedSitters}
+          </div>
       </Layout>
     )
   }
