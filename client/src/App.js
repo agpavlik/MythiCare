@@ -6,6 +6,7 @@ import {
   Outlet,
 } from 'react-router-dom'
 
+
 import "./App.css";
 import { useSelector } from 'react-redux'
 import User from './pages/user'
@@ -40,7 +41,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/sitters' element={<AllSitters />} />
+        <Route path='/allsitters' element={<AllSitters />} />
         <Route path='/about' element={<About />} />
         <Route path='/petform' element={<PetForm />} />
         <Route path='/petprofile/:id' element={<PetProfile />} />

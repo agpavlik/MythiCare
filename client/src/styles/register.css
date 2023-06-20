@@ -1,23 +1,23 @@
 
-
 .register-main {
   display: flex;
   justify-content: center;
   width: 100%;
   margin: 0;
   padding: 0;
-  /* background-image: url("../../public/Animals.jpg"); */
-
 }
 
 .register-input {
   width: 450px;
-  background-image: radial-gradient(100% 100% at 100% 0, rgb(202, 202, 202) 0, rgb(161, 161, 161) 100%);
+  background-color: #e7eefd;
   padding: 5px 5px 20px;
   margin: 10px 0;
   border-radius: 7px;
   border-color: #5468ff;
   border-style: solid;
+  font-family: 'Gloria Hallelujah', cursive;
+  /* font-family: 'Architects Daughter', cursive;*/
+  box-shadow: 0 0 15px 15px white;
 }
 
 @media screen and (max-width: 768px) {
@@ -30,7 +30,7 @@
   border-style: solid;
 }
 
-* .button-29 {
+.button-29 {
   align-items: center;
   appearance: none;
   background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
@@ -41,7 +41,7 @@
   color: #fff;
   cursor: pointer;
   display: inline-flex;
-  font-family: "Fira Sans", sans-serif;
+  font-family: 'Gloria Hallelujah', cursive;
   height: 35px;
   justify-content: center;
   line-height: 1;
@@ -59,7 +59,6 @@
   white-space: nowrap;
   will-change: box-shadow,transform;
   width: 150px;
-  font-size: 18px;
 }
 
 .button-29:focus {

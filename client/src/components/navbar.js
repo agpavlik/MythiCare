@@ -26,11 +26,11 @@ const Navbar = () => {
 
 
   return (
-    <nav className='navbar navbar-light bg-light'>
+    <nav className='navbar'>
       <div className='container'>
         <div>
           <NavLink to='/'>
-            <span className='navbar-brand mb-0 h1'>Home</span>
+          <img src="logo.png" alt="Logo" id="logo-nav"/><span className='navbar-brand'>MythiCare</span>
           </NavLink>
         </div>
 

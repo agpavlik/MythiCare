@@ -98,8 +98,9 @@ body, html, .App, #root, .auth-wrapper {
 
 body {
   display: flex;
-  background: lightgrey;
-  font-family: 'Montserrat', sans-serif;
+  background-image: url('/public/beasts-feature.jpg');
+  background-repeat: repeat;
+  background-position: 50%;
 }
 
 .App-header {

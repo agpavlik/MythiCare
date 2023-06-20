@@ -4,16 +4,21 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  background:rgba(255,255,255, 0.7);
   width: 100%;
   height: 100%;
-  margin: 50px 0;
-  padding: 0;
+  margin: 30px 0;
+  padding: 20px 20px;
+  border-radius: 5px;
 }
 
 .user-info {
-  width:350px;
+  width: 350px;
   height: 500px;
-  background-color: darkgrey;
+  background-color:  #e7eefd;
+  border-radius: 7px;
+  border-color: #5468ff;
+  border-style: solid;
   padding: 10px;
 }
 
@@ -21,15 +26,17 @@
   width: 90%;
   margin: 5%;
   height: 50px;
-  background-color: grey;
   border-radius: 5px;
   padding: 5px;
 }
 
 .user-pets {
-  width:600px;
+  width: 550px;
   height: 500px;
-  background-color: darkgray;
+  background-color:  #e7eefd;
+  border-radius: 7px;
+  border-color: #5468ff;
+  border-style: solid;
   padding: 10px;
 }
 
@@ -41,15 +48,18 @@
   padding: 10px;
 }
 
+#create-profile-text{
+  padding-left: 25px;
+}
+
 .create-profile {
-  background-color: darkgrey;
+  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
   width: 250px;
-  height: 70px;
+  height: 75px;
   text-align: center;
-  background-color: grey;
   border-radius: 5px;
   margin: 30px 10px;
-  padding-top: 7%;
+  padding-top: 5%;
 }
 
 .user-link {
@@ -70,4 +80,11 @@ color: black;
     margin: 20px;
     width:250px;
   }
+}
+
+body {
+  display: flex;
+  background-image: url('/public/beasts-feature.jpg');
+  background-repeat: repeat;
+  background-position: 50%;
 }

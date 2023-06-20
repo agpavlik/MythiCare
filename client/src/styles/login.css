@@ -12,12 +12,14 @@
 
 .login-input {
   width: 450px;
-  background-image: radial-gradient(100% 100% at 100% 0, rgb(202, 202, 202) 0, rgb(161, 161, 161) 100%);
+  background-color: #e7eefd;
+  background-image: radial-gradient(100% 100% at 100% 0, #e7eefd 0, #a2adff 100%);
   padding: 5px 5px 20px;
   margin: 10px 0;
   border-radius: 7px;
   border-color: #5468ff;
   border-style: solid;
+  box-shadow: 0 0 15px 15px white;
 }
 
 @media screen and (max-width: 768px) {

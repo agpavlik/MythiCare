@@ -66,7 +66,7 @@ const User = () => {
             <h4>Your pets profiles</h4>
           </div>
           <div className="user-box">
-            <h4>Create profile depending on your porposes</h4>
+            <h4 id="create-profile-text">Create profile depending on your porposes</h4>
             <Link to={"/PetForm"} className="user-link">
               <div className="create-profile">
                 <h5> Create Pet Profile </h5>

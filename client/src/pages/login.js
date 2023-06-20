@@ -49,7 +49,7 @@ const Login = () => {
                 id='email'
                 name='email'
                 value={values.email}
-                placeholder='youremail@gmail.com'
+                //placeholder='youremail@gmail.com'
                 required
               />
             </div>
@@ -65,7 +65,7 @@ const Login = () => {
                 className='form-control'
                 id='password'
                 name='password'
-                placeholder='passwod'
+                //placeholder='passwod'
                 required
               />
             </div>
