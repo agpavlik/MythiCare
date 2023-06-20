@@ -51,7 +51,7 @@ console.log("data", data);
                 id='first_name'
                 name='first_name'
                 value={values.first_name}
-                placeholder='enter your First Name'
+                //placeholder='enter your First Name'
                 required
               />
             </div>
@@ -67,7 +67,7 @@ console.log("data", data);
                 id='last_name'
                 name='last_name'
                 value={values.last_name}
-                placeholder='enter your Last Name'
+                //placeholder='enter your Last Name'
                 required
               />
             </div>
@@ -82,9 +82,9 @@ console.log("data", data);
                 className='form-control'
                 id='phone'
                 name='phone'
-                pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'
+                //pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'
                 value={values.phone}
-                placeholder='###-###-####'
+                //placeholder='###-###-####'
                 required
               />
             </div>
@@ -100,7 +100,7 @@ console.log("data", data);
                 id='email'
                 name='email'
                 value={values.email}
-                placeholder='youremail@gmail.com'
+                //placeholder='youremail@gmail.com'
                 required
               />
             </div>
@@ -116,7 +116,7 @@ console.log("data", data);
                 className='form-control'
                 id='password'
                 name='password'
-                placeholder='enter your password'
+                //placeholder='enter your password'
                 required
               />
             </div>

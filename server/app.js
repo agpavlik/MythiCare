@@ -1,31 +1,31 @@
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+// var express = require('express');
+// var path = require('path');
+// var cookieParser = require('cookie-parser');
+// var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-const sittersRouter = require('./routes/sitters')
-const petsRouter = require('./routes/pets')
-const ownersRouter = require('./routes/owners');
-// const bookingsRouter = require('./routes/bookings');
+// var indexRouter = require('./routes/index');
+// var usersRouter = require('./routes/users');
+// const sittersRouter = require('./routes/sitters')
+// const petsRouter = require('./routes/pets')
+// const ownersRouter = require('./routes/owners');
+// // const bookingsRouter = require('./routes/bookings');
 
-var app = express();
+// var app = express();
 
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(logger('dev'));
+// app.use(express.json());
+// app.use(express.urlencoded({ extended: false }));
+// app.use(cookieParser());
+// app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/sitters', sittersRouter);
-app.use('/pets', petsRouter);
-app.use('/owners', ownersRouter);
-// app.use('/bookings', bookingsRouter);
+// app.use('/', indexRouter);
+// app.use('/users', usersRouter);
+// app.use('/sitters', sittersRouter);
+// app.use('/pets', petsRouter);
+// app.use('/owners', ownersRouter);
+// // app.use('/bookings', bookingsRouter);
 
-module.exports = app;
+// module.exports = app;
 
 // require('dotenv').config()
 // const {ENVIRONMENT, PORT} = process.env;

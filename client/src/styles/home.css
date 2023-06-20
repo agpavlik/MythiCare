@@ -15,8 +15,6 @@ body {
   justify-content: center;
   align-items: center;
   min-height: auto;
-  background: lightgrey;
-  font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -27,6 +25,22 @@ body {
   padding: 0;
   height: 100vh;
 }
+
+#logo-main{
+ width: 300px;
+
+}
+
+.home-brand {
+  text-decoration: none;
+  color: #e7eefd;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 54px;
+  display: inline-block;
+  vertical-align: middle;
+  align-content: left;
+}
+
 
 .home-container {
   display: flex;
@@ -41,10 +55,16 @@ body {
 
 .home-box{
   display: flex;
-  position: static;
   width:auto;
-  margin: 40px 0;
+  margin: 50px 0;
   background-color: transparent;
+}
+
+.home-box-logo{
+  width:auto;
+  margin: 0 0 20px;
+  background-color: transparent;
+  padding-right: 50px;
 }
 
 .home-box-user{
@@ -64,7 +84,7 @@ body {
   background-color: white;
   padding-top: 5px;
   border-style: solid;
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 .button-login {
@@ -73,7 +93,7 @@ body {
   border-radius: 7px;
   background-color: white;
   border-style: solid;
-  opacity: 0.5;
+  opacity: 0.3;
   border-color: black;
 }
 
@@ -83,17 +103,18 @@ body {
   border-radius: 7px;
   background-color: white;
   border-style: solid;
-  opacity: 0.5;
+  opacity: 0.3;
   border-color: black;
 }
 
 .button-home-page:hover, .button-login:hover, .button-about:hover {
-  background-color: lightblue;
+  background-color: none;
+  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
   opacity: unset;
 }
 
 .button-home-page:active, .button-login:active, .button-about:active {
-  background-color: blue;
+  background-image: radial-gradient(100% 100% at 100% 0, #5adbff 0, #5468ff 100%);
   opacity: unset;
   transform: translateY(4px);
 }

@@ -12,6 +12,10 @@ const { Pool } = require('pg');
 const crypto = require('crypto');
 const sessionSecret = crypto.randomBytes(32).toString('hex');
 const bodyParser = require('body-parser');
+const { config } = require('dotenv')
+config()
+console.log("env port", process.env.PORT)
+
 
 //import passport middleware
 require('./middlewares/passport-middleware')
@@ -153,12 +157,19 @@ passport.deserializeUser(async (id, done) => {
 		res.json({ user: req.user });
 		});
 
+		app.get('/', (req, res) => {
+			res.json({user: 'user'})
+
+		}
+
+		)
 
 //app start
 const appStart = () => {
   try {
     app.listen(PORT, () => {
       console.log(`The app is running at http://localhost:${PORT}`)
+			console.log("port:", PORT);
     })
   } catch (error) {
     console.log(`Error: ${error.message}`)

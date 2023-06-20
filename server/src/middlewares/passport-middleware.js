@@ -10,7 +10,7 @@ const cookieExtractor = function (req) {
 }
 
 const opts = {
-  secretOrKey: SECRET,
+  secretOrKey: "kroekroerkeorrkeo",
   jwtFromRequest: cookieExtractor,
 }
 

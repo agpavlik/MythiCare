@@ -2,7 +2,7 @@ const { Pool } = require('pg')
 const pool = new Pool({
   user: 'development',
   host: 'localhost',
-  database: 'final',
+  database: 'sitter',
   password: 'development',
   port: 5432,
 })
@@ -10,3 +10,4 @@ const pool = new Pool({
 module.exports = {
   query: (text, params) => pool.query(text, params),
 }
+

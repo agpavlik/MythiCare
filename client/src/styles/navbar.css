@@ -1,4 +1,25 @@
 .mx-3 {
   text-decoration: none;
   color: black;
+  font-family: 'Gloria Hallelujah', cursive;
   }
+
+.navbar {
+  background-color: #e7eefd;
+  padding: 0;
+}
+
+.navbar-brand {
+  text-decoration: none;
+  color: black;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 30px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#logo-nav{
+  width: 80px;
+  margin: 0;
+  padding: 0;
+}
