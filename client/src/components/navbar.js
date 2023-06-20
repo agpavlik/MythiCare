@@ -39,12 +39,21 @@ const Navbar = () => {
             <NavLink to='/sitter-profile' className='mx-3'>
               <span>My Sitter Profile</span>
             </NavLink>
+
+            <NavLink to='/sitters' className='mx-3'>
+              <span>Find a sitter</span>
+            </NavLink>
+
             <NavLink to='/' className='mx-3' onClick={() => logout()}>
               <span>Logout</span>
             </NavLink>
           </div>
         ) : (
           <div>
+            <NavLink to='/sitters' className='mx-3'>
+              <span>Find a sitter</span>
+            </NavLink>
+
             <NavLink to='/login' className='mx-3'>
               <span>Login</span>
             </NavLink>

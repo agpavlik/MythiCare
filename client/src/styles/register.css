@@ -9,14 +9,13 @@
 
 .register-input {
   width: 450px;
-  background-color: #e7eefd;
+  background-image: radial-gradient(100% 100% at 100% 0, #e7eefd 0, #a2adff 100%);
   padding: 5px 5px 20px;
   margin: 10px 0;
   border-radius: 7px;
   border-color: #5468ff;
   border-style: solid;
   font-family: 'Gloria Hallelujah', cursive;
-  /* font-family: 'Architects Daughter', cursive;*/
   box-shadow: 0 0 15px 15px white;
 }
 
