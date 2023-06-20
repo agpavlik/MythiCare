@@ -7,12 +7,25 @@
   width: 100%;
   height: 100%;
   margin: 15px 0;
-  padding: 20px 20px;
+  padding: 20px 30px;
   border-radius: 5px;
 }
 
-.sitters-page-info {
-  width: 450px;
+.sitter-page-detailes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+  background-color:  #e7eefd;
+  border-radius: 7px;
+  border-color: #5468ff;
+  border-style: ridge;
+  padding: 10px 40px;
+}
+
+.sitter-page-calendar {
+  width: 700px;
   height: 500px;
   background-color:  #e7eefd;
   border-radius: 7px;
@@ -21,7 +34,11 @@
   padding: 10px;
 }
 
-.sitters-page-photo {
+.sitter-page-info {
+  margin: 10px;
+}
+
+.sitter-page-photo {
   border-radius: 100%;
   width: 250px;
   height: 250px;

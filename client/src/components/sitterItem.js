@@ -18,7 +18,7 @@ const SitterItem = (props) => {
           <div class="sitter-item-info">Experience: {experience} years</div>
           <div class="sitter-item-info">{bio}</div>
           <div class="sitter-item-info">Avg. Rating: {avg_rating}</div>
-          <div class="sitter-item-info">Prise from ${nightly_rate} per night</div>
+          <div class="sitter-item-info">Price from ${nightly_rate} per night</div>
         </div>
       </article>
     </Link>

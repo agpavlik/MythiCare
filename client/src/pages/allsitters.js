@@ -1,5 +1,4 @@
 import Layout from '../components/layout'
-import "../styles/sitters.css";
 // import React, {useState, useEffect} from "react";
 // import {Link} from "react-router-dom";
 import SitterItem from "../components/sitterItem"
