@@ -11,7 +11,6 @@ const Register = () => {
     email: '',
     password: '',
   })
-  
   const [error, setError] = useState(false)
   const [success, setSuccess] = useState(false)
 
