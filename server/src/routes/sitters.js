@@ -174,24 +174,24 @@ router.patch('/:id/booking-requests', async (req, res) => {
 
 router.post('/:id/bookings', async (req, res) => {
   try {
-    const { petId, sitterId, serviceId, startDate, endDate } = req.body;
+    const { petId, sitter_id, startDate, endDate, fee, isComplete } = req.body;
 
-    // Fetch the nightly rate from the pet_sitters table
-    const rateTotal = 'SELECT nightly_rate FROM pet_sitters WHERE id = $1';
-    const rateResult = await db.query(rateTotal, [sitterId]);
-    const nightlyRate = rateResult.rows[0].nightly_rate;
+    // // Fetch the nightly rate from the pet_sitters table
+    // const rateTotal = 'SELECT nightly_rate FROM pet_sitters WHERE id = $1';
+    // const rateResult = await db.query(rateTotal, [sitterId]);
+    // const nightlyRate = rateResult.rows[0].nightly_rate;
 
-    // Calculate the number of days requested
-    const start = new Date(startDate);
-    const end = new Date(endDate);
-    const numberOfDays = Math.ceil((end - start) / (1000 * 60 * 60 * 24));
+    // // Calculate the number of days requested
+    // const start = new Date(startDate);
+    // const end = new Date(endDate);
+    // const numberOfDays = Math.ceil((end - start) / (1000 * 60 * 60 * 24));
 
-    // Calculate the fee
-    const fee = nightlyRate * numberOfDays;
+    // // Calculate the fee
+    // const fee = nightlyRate * numberOfDays;
 
     // Insert the booking request into the bookings table
-    const insertBooking = `INSERT INTO bookings (pet_id, sitter_id, service_id, start_date, end_date, fee) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`;
-    const values = [petId, sitterId, serviceId, startDate, endDate, fee];
+    const insertBooking = `INSERT INTO bookings (pet_id, sitter_id, start_date, end_date, fee, is_complete) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`;
+    const values = [petId, sitter_id, startDate, endDate, fee, isComplete];
     const result = await db.query(insertBooking, values);
 
     const booking = result.rows[0];

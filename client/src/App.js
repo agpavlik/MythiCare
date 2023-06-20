@@ -38,18 +38,31 @@ const RestrictedRoutes = () => {
 function App() {
 
   const [sitters, setSitters] = useState();
+  const [owners, setOwners] = useState();
+
 
   useEffect(() => {
 
     const fetchSitters = async () => {
       try {
-        const response = await axios.get('http://localhost:8082/sitters');
+        const response = await axios.get('http://localhost:8080/sitters');
         const data = response.data.sitters
         setSitters(data);
       } catch (error) {
         console.error('Error fetching sitters:', error);
       }
     };
+
+    // const fetchOwners = async () => {
+    //   try {
+    //     const response = await axios.get('http://localhost:8080/owners');
+    //     const data = response;
+    //     setOwners(data)
+    //   } catch (error) {
+    //     console.error('Error fetching owners:', error);
+    //   }
+    // }
+    // fetchOwners();
     fetchSitters();
   }, [])
   

@@ -33,7 +33,7 @@ const SittersPage = () => {
           <p>Avg. Rating: {sitter.avg_rating}</p>
         </div>
     </article>
-      <AvailabilityCalendar sitterId={sitter.id} nightly_rate={sitter.nightly_rate}/>
+      <AvailabilityCalendar sitterId={sitter.sitter_id} nightly_rate={sitter.nightly_rate}/>
     </div>
   );
 };

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Layout from '../components/layout'
 import "../styles/PetForm.css";
+import { Navigate, useNavigate } from 'react-router-dom'; 
 axios.defaults.withCredentials = true
 
 const PetForm = () => {
@@ -17,6 +18,8 @@ const PetForm = () => {
     notes: ''
   });
 
+  const navigate = useNavigate();
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setPetData({ ...petData, [name]: value });
@@ -25,12 +28,12 @@ const PetForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      return await axios.post('http://localhost:8082/pets', petData);
+      const response = await axios.post('http://localhost:8080/pets', petData);
       console.log('Pet profile added:', petData);
-      // Reset the form or display a success message
+      const petId = response.data.id; //
+      navigate(`/petprofile/${petId}`); // Redirect to the pet/:id page
     } catch (error) {
       console.error('Error adding pet profile:', error);
-      // Handle the error and display an error message to the user
     }
   };
 

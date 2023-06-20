@@ -14,7 +14,7 @@ const SitterForm = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:8082/sitters', {
+      const response = await axios.post('http://localhost:8080/sitters', {
         // firstName,
         // lastName,
         bio,
