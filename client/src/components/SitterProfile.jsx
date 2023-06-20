@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import ServiceRequestsList from './ServiceRequestsList';
 
-const SitterProfile = () => {
+const SitterProfile = ({bookingRequests}) => {
   const [sitter, setSitter] = useState(null);
   
   useEffect(() => {
@@ -32,6 +33,7 @@ const SitterProfile = () => {
       <p>Address: {sitter.address}</p>
       <p>Experience: {sitter.experience}</p>
       <p>Contact Info: {sitter.contactInfo}</p>
+      <ServiceRequestsList bookingRequests={bookingRequests}/>
     </div>
   );
 };

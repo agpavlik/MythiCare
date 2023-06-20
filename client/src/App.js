@@ -61,8 +61,8 @@ function App() {
     const fetchBookingRequest = async () => {
       try {
         const response = await axios.get(`/sitters/1/booking-requests`);
-        console.log(response.data.bookings[0]);
-        setBookingRequests(response);
+        const data = response.data.bookings[0];
+        setBookingRequests(data);
       } catch (error) {
         console.error(error);
       }
@@ -84,7 +84,7 @@ function App() {
 
         <Route element={<PrivateRoutes />}>
           <Route path='/user' element={<User />} />
-          <Route path='/sitter-profile' element={<SitterProfile />} />
+          <Route path='/sitter-profile' element={<SitterProfile bookingRequests={bookingRequests}/>} />
         </Route>
 
         <Route element={<RestrictedRoutes />}>
