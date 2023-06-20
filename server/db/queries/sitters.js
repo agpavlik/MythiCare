@@ -1,13 +1,17 @@
 const db = require('../../configs/db.config');
 
 const getAllSitters = () => {
-	return db.query("SELECT * FROM pet_sitters JOIN users ON users.id = user_id;").then(data => {
+	return db.query(`
+		SELECT * 
+		FROM pet_sitters 
+		JOIN users ON users.id = user_id
+		JOIN reviews ON pet_sitters.id = sitter_id;`).then(data => {
 		return data.rows;
 	})
 }
 
 const getSitterById = id => {
-	return db.query("SELECT *, pet_sitters.id AS sitter_id FROM pet_sitters JOIN users ON users.id = user_id WHERE pet_sitters.id = $1;", [id]).then(data => {
+	return db.query("SELECT * FROM pet_sitters JOIN users ON users.id = user_id WHERE pet_sitters.id = $1;", [id]).then(data => {
 		return data.rows;
 	})
 }

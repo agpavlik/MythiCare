@@ -36,6 +36,9 @@ const Navbar = () => {
 
         {isAuth ? (
           <div>
+            <NavLink to='/sitter-profile' className='mx-3'>
+              <span>My Sitter Profile</span>
+            </NavLink>
             <NavLink to='/' className='mx-3' onClick={() => logout()}>
               <span>Logout</span>
             </NavLink>

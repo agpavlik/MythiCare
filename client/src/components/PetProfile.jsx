@@ -21,9 +21,13 @@ const PetProfile = () => {
     fetchPet();
   }, [id]);
 
-  // useEffect(() => {
-  //   console.log(pets)
-  // }, [pets])
+  useEffect(() => {
+    const fetchOwner = async () => {
+      const response = await axios.get(`http://localhost:8080/owners`);
+      console.log("Pet owner id", response);
+    }
+    fetchOwner()
+  })
 
   return (
     <div>

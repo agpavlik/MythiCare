@@ -41,6 +41,7 @@ CREATE TABLE pet_types (
 CREATE TABLE pets (
   id SERIAL PRIMARY KEY NOT NULL,
   owner_id INTEGER REFERENCES pet_owners(id) ON DELETE CASCADE,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   type_id INTEGER REFERENCES pet_types(id) ON DELETE CASCADE,
   name VARCHAR(255) NOT NULL,
   age INTEGER NOT NULL,
@@ -51,7 +52,8 @@ CREATE TABLE pets (
   feeding_instructions TEXT,
   activity_needs TEXT,
   other_notes TEXT,
-  profile_photo VARCHAR(255)
+  profile_photo VARCHAR(255),
+  CONSTRAINT fk_type_id FOREIGN KEY (type_id) REFERENCES pet_types(id) ON DELETE CASCADE
 );
 
 CREATE TABLE sitting_services (

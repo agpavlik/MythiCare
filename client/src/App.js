@@ -6,8 +6,11 @@ import {
   Outlet,
 } from 'react-router-dom'
 
+import axios from 'axios';
+
 import "./App.css";
 import { useSelector } from 'react-redux'
+import React, {useState, useEffect} from 'react';
 import User from './pages/user'
 import Home from './pages/home'
 import Login from './pages/login'
@@ -17,6 +20,8 @@ import AllSitters from './pages/allsitters'
 import PetForm from './components/PetForm'
 import PetProfile from './components/PetProfile'
 import SitterForm from './components/SitterForm'
+import SittersPage from './components/SittersPage';
+import SitterProfile from './components/SitterProfile';
 
 
 //import {petSitters} from '.'
@@ -33,14 +38,44 @@ const RestrictedRoutes = () => {
 
 function App() {
 
-  const sitterId = 1;
-  const ownerId = 1;
+  const [sitters, setSitters] = useState();
+  const [bookingRequests, setBookingRequests] = useState(null)
+
+
+
+  useEffect(() => {
+
+    const fetchSitters = async () => {
+      try {
+        const response = await axios.get('http://localhost:8080/sitters');
+        const data = response.data.sitters
+        setSitters(data);
+      } catch (error) {
+        console.error('Error fetching sitters:', error);
+      }
+    };
+    fetchSitters();
+  }, [])
+  
+  useEffect(() => {
+    const fetchBookingRequest = async () => {
+      try {
+        const response = await axios.get(`/sitters/1/booking-requests`);
+        console.log(response.data.bookings[0]);
+        setBookingRequests(response);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    fetchBookingRequest()
+  }, [])
 
   return (
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/sitters' element={<AllSitters />} />
+        <Route path='/sitters' element={<AllSitters sitters={sitters}/>} />
+        <Route path='/sitter/:id' element={<SittersPage/>} />
         <Route path='/about' element={<About />} />
         <Route path='/petform' element={<PetForm />} />
         <Route path='/petprofile/:id' element={<PetProfile />} />
@@ -49,13 +84,12 @@ function App() {
 
         <Route element={<PrivateRoutes />}>
           <Route path='/user' element={<User />} />
+          <Route path='/sitter-profile' element={<SitterProfile />} />
         </Route>
 
         <Route element={<RestrictedRoutes />}>
           <Route path='/register' element={<Register />} />
           <Route path='/login' element={<Login />} />
-
-
         </Route>
       </Routes>
     </BrowserRouter>

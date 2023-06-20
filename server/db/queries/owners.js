@@ -26,4 +26,11 @@ const getPetByOwner = id => {
     })
 }
 
-module.exports = {getAllOwners, getPetByOwner, getPetNameByOwner}
+const getOwnerIdFromUser = id => {
+  return db.query(`
+    SELECT id FROM pet_owners WHERE user_id = $1;`, [id]).then(data => {
+      return data.rows;
+    })
+}
+
+module.exports = {getAllOwners, getPetByOwner, getPetNameByOwner, getOwnerIdFromUser}

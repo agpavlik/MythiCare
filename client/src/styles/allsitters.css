@@ -1,0 +1,8 @@
+#sitter {
+  display: flex;
+  flex-direction: column;
+}
+
+#sitter > img {
+  border-radius: 50%;
+}
