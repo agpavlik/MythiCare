@@ -30,7 +30,7 @@ const Navbar = () => {
       <div className='container'>
         <div>
           <NavLink to='/'>
-          <img src="logo.png" alt="Logo" id="logo-nav"/><span className='navbar-brand'>MythiCare</span>
+            <img src="logo.png" alt="Logo" id="logo-nav"/><span className='navbar-brand'>MythiCare</span>
           </NavLink>
         </div>
 

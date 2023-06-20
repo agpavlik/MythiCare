@@ -27,9 +27,20 @@ body {
 }
 
 #logo-main{
- width: 250px;
+ width: 300px;
 
 }
+
+.home-brand {
+  text-decoration: none;
+  color: #e7eefd;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 54px;
+  display: inline-block;
+  vertical-align: middle;
+  align-content: left;
+}
+
 
 .home-container {
   display: flex;
@@ -44,10 +55,16 @@ body {
 
 .home-box{
   display: flex;
-  position: static;
   width:auto;
-  margin: 40px 0;
+  margin: 50px 0;
   background-color: transparent;
+}
+
+.home-box-logo{
+  width:auto;
+  margin: 0 0 20px;
+  background-color: transparent;
+  padding-right: 50px;
 }
 
 .home-box-user{
@@ -67,7 +84,7 @@ body {
   background-color: white;
   padding-top: 5px;
   border-style: solid;
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 .button-login {
@@ -76,7 +93,7 @@ body {
   border-radius: 7px;
   background-color: white;
   border-style: solid;
-  opacity: 0.5;
+  opacity: 0.3;
   border-color: black;
 }
 
@@ -86,7 +103,7 @@ body {
   border-radius: 7px;
   background-color: white;
   border-style: solid;
-  opacity: 0.5;
+  opacity: 0.3;
   border-color: black;
 }
 

@@ -2,15 +2,15 @@ import Layout from '../components/layout'
 import "../styles/home.css";
 import React from "react";
 import {Link} from "react-router-dom";
-import pop from "./pop.mkv";
+import beasts from "./beasts.mkv";
 
 const Home = () => {
   return (
       <section className="home-section">
-        <video className='video' src ={pop} autoPlay loop muted/>
+        <video className='video' src ={beasts} autoPlay loop muted/>
         <div className="home-container">
-        <div className="home-box">
-          <img src="logo.png" alt="Logo" id="logo-main"/><span className='navbar-brand'>MythiCare</span>
+        <div className="home-box-logo">
+          <img src="logo.png" alt="Logo" id="logo-main"/><span className='home-brand'>MythiCare</span>
         </div>
 
         <div className="home-box-user">

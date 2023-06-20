@@ -98,7 +98,7 @@ body, html, .App, #root, .auth-wrapper {
 
 body {
   display: flex;
-  background-image: url('/public/beasts-feature.jpg');
+  background-image: url('/public/beasts-feature-opacity.jpg');
   background-repeat: repeat;
   background-position: 50%;
 }
