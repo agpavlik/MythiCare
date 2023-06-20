@@ -21,6 +21,7 @@ import PetForm from './components/PetForm'
 import PetProfile from './components/PetProfile'
 import SitterForm from './components/SitterForm'
 import SittersPage from './components/SittersPage';
+import SitterProfile from './components/SitterProfile';
 
 
 //import {petSitters} from '.'
@@ -38,7 +39,8 @@ const RestrictedRoutes = () => {
 function App() {
 
   const [sitters, setSitters] = useState();
-  const [owners, setOwners] = useState();
+  const [bookingRequests, setBookingRequests] = useState(null)
+
 
 
   useEffect(() => {
@@ -52,20 +54,21 @@ function App() {
         console.error('Error fetching sitters:', error);
       }
     };
-
-    // const fetchOwners = async () => {
-    //   try {
-    //     const response = await axios.get('http://localhost:8080/owners');
-    //     const data = response;
-    //     setOwners(data)
-    //   } catch (error) {
-    //     console.error('Error fetching owners:', error);
-    //   }
-    // }
-    // fetchOwners();
     fetchSitters();
   }, [])
   
+  useEffect(() => {
+    const fetchBookingRequest = async () => {
+      try {
+        const response = await axios.get(`/sitters/1/booking-requests`);
+        console.log(response.data.bookings[0]);
+        setBookingRequests(response);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    fetchBookingRequest()
+  }, [])
 
   return (
     <BrowserRouter>
@@ -81,6 +84,7 @@ function App() {
 
         <Route element={<PrivateRoutes />}>
           <Route path='/user' element={<User />} />
+          <Route path='/sitter-profile' element={<SitterProfile />} />
         </Route>
 
         <Route element={<RestrictedRoutes />}>

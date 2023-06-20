@@ -1,21 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const SitterProfile = ({ id }) => {
+const SitterProfile = () => {
   const [sitter, setSitter] = useState(null);
-
+  
   useEffect(() => {
     const fetchSitter = async () => {
       try {
-        const response = await axios.get(`/api/sitters/${id}`);
-        setSitter(response.data);
+        const response = await axios.get(`/sitters/1`);
+        setSitter(response.data.sitter[0]);
       } catch (error) {
         console.error(error);
       }
     };
 
     fetchSitter();
-  }, [id]);
+  }, []);
+
+
+  // useEffect(() => console.log(sitter), [sitter]) 
 
   if (!sitter) {
     return <div>Loading...</div>;
