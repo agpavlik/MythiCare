@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import Layout from '../components/layout'
+import "../styles/SitterProfile.css";
 
 const SitterProfile = () => {
   const [sitter, setSitter] = useState(null);
@@ -25,14 +27,47 @@ const SitterProfile = () => {
   }
 
   return (
-    <div>
-      <h1>Sitter Profile</h1>
-      <p>First Name: {sitter.firstName}</p>
-      <p>Last Name: {sitter.lastName}</p>
-      <p>Address: {sitter.address}</p>
-      <p>Experience: {sitter.experience}</p>
-      <p>Contact Info: {sitter.contactInfo}</p>
-    </div>
+    <Layout>
+        <div className="sitter-profile-main">
+          <div className="sitter-profile-info-photo">
+            <img src="kovalsky.jpg" alt="Sitter Photo" className="sitter-profile-photo"/>
+          </div>  
+
+          <div className="sitter-profile-info">
+            <div className="sitter-profile-detailes">
+              <h5>First Name</h5>
+            </div>
+            <div className="sitter-profile-detailes">
+              <h5>Last Name</h5>
+            </div>
+            <div className="sitter-profile-detailes">
+              <h5>Phone</h5>
+            </div>
+            <div className="sitter-profile-detailes">
+              <h5>Email</h5>
+            </div>
+            <div className="sitter-profile-detailes">
+              <h5>Country&nbsp;/&nbsp;Region</h5>
+            </div>
+            <div className="sitter-profile-detailes">
+              <h5>City</h5>
+            </div>
+          </div>  
+            
+          <div className="sitter-profile-info"> 
+            <div className="sitter-profile-detailes">
+              <h5>Bio</h5>
+            </div>
+            <div className="sitter-profile-detailes">
+              <h5>Experience</h5>
+            </div>
+            <div className="sitter-profile-detailes">
+              <h5>Rate</h5>
+            </div>
+          </div>
+
+        </div>
+    </Layout>
   );
 };
 

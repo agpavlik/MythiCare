@@ -1,6 +1,9 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import Layout from '../components/layout'
+import "../styles/PetProfile.css";
+
 axios.defaults.withCredentials = true
 
 const PetProfile = () => {
@@ -30,18 +33,45 @@ const PetProfile = () => {
   })
 
   return (
-    <div>
-      <h2>Pet Profile: </h2>
-      <img src={pet.profile_photo} alt={pet.name} />
-      <p>Name: {pet.name}</p>
-      <p>Age: {pet.age}</p>
-      <p>Size: {pet.size}</p>
-      <p>Temperament: {pet.temperament}</p> 
-      <p>Feeding Instructions: {pet.feeding_instructions}</p>
-      <p>Activity Needs: {pet.activity_needs}</p>
-      <p>Medical Conditions: {pet.medical_conditions}</p>
-      <p>Notes: {pet.notes}</p>
-    </div>
+    <Layout>
+      <div className="pet-profile-main">
+        <div className="sitter-profile-info-photo">
+          <img src={pet.profile_photo} alt={pet.name} className="pet-profile-photo"/>
+        </div>  
+
+        <div className="pet-profile-info">
+          <div className="pet-profile-detailes">
+            <h5>Name:</h5>
+            <p>{pet.name}</p>
+          </div>
+          <div className="pet-profile-detailes">
+            <h5>Age: {pet.age}</h5>
+          </div>
+          <div className="pet-profile-detailes">
+            <h5>Size: {pet.size}</h5>
+          </div>
+          <div className="pet-profile-detailes">
+            <h5>Temperament: {pet.temperament}</h5>
+          </div>
+          <div className="pet-profile-detailes">
+            <h5>Medical Conditions: {pet.medical_conditions}</h5>
+          </div>
+        </div>  
+          
+        <div className="pet-profile-info">
+          <div className="pet-profile-detailes">
+            <h5>Feeding Instructions: {pet.feeding_instructions}</h5>
+          </div>
+          <div className="pet-profile-detailes">
+            <h5>Activity Needs: {pet.activity_needs}</h5>
+          </div>
+          <div className="pet-profile-detailes">
+            <h5>Activity Needs: {pet.activity_needs}</h5>
+          </div>
+        </div>
+
+      </div>
+    </Layout>
   );
 };
 

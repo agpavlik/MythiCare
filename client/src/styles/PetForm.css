@@ -1,39 +1,37 @@
 
-
 .pet-form-main {
   display: flex;
   justify-content: center;
   width: 100%;
-  margin: 0;
+  margin-top: 50px;
   padding: 0;
 
 }
 
 .pet-form-input {
-  width: 450px;
+  width: 1000px;
   background-image: radial-gradient(100% 100% at 100% 0, #e7eefd 0, #a2adff 100%);
   padding: 5px 5px 20px;
   margin: 10px 0;
   border-radius: 7px;
   border-color: #5468ff;
-  border-style: solid;
-  font-family: 'Gloria Hallelujah', cursive;
+  border-style: ridge;
+  font-family: 'Milonga', cursive;
+  font-weight: 50px;
   box-shadow: 0 0 15px 15px white;
 }
-
-/* .mb-3 {
+.mb-3-plus {
   display: flex;
   flex-direction: row !important;
+  justify-content: space-between;
   height: 30px;
+  margin: 20px 0;
 }
-.form-control{
-  margin-left: 10px;
-} */
 
 .pet-form-label {
   min-width: 50px;
   max-width: 50px;
-  margin-right: 100px;
+  margin-right: 80px;
 }
 
 .pet-photo {
@@ -44,7 +42,7 @@
   .pet-form-input {
   width: 350px;
   }
-  .pet-photo, .pet-photo {
+  .pet-photo {
     margin-left: 2px;
   }
   .pet-form-label {

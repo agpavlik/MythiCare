@@ -6,3 +6,13 @@
 #sitter > img {
   border-radius: 50%;
 }
+
+.allsitters-main {
+  display: flex;
+  background:rgba(255,255,255, 0.8);
+  width: 100%;
+  height: 540px;
+  margin: 30px 0;
+  padding: 20px 20px;
+  border-radius: 5px;
+}

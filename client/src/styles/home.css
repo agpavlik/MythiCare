@@ -34,8 +34,8 @@ body {
 .home-brand {
   text-decoration: none;
   color: #e7eefd;
-  font-family: 'Gloria Hallelujah', cursive;
-  font-size: 54px;
+  font-family: 'Tangerine', bold;
+  font-size: 100px;
   display: inline-block;
   vertical-align: middle;
   align-content: left;
@@ -56,15 +56,15 @@ body {
 .home-box{
   display: flex;
   width:auto;
-  margin: 50px 0;
+  margin: 40px 0;
   background-color: transparent;
+  font-size: 20px;
+  font-family: 'Milonga', cursive;
 }
 
 .home-box-logo{
   width:auto;
   margin: 0 0 20px;
-  background-color: transparent;
-  padding-right: 50px;
 }
 
 .home-box-user{
@@ -72,24 +72,26 @@ body {
   position: static;
   width:auto;
   background-color: transparent;
+  font-family: 'Milonga', cursive;
 }
 
 
+
 .button-home-page {
-  margin: 10px 200px;
+  margin: 5px 200px;
   width: 250px;
   height: 70px;
   border-radius: 10px;
   border-color: black;
   background-color: white;
-  padding-top: 5px;
+  padding-top: 3px;
   border-style: solid;
   opacity: 0.3;
 }
 
 .button-login {
   width: 150px;
-  height: 35px;
+  height: 40px;
   border-radius: 7px;
   background-color: white;
   border-style: solid;
@@ -99,10 +101,10 @@ body {
 
 .button-about {
   width: 250px;
-  height: 35px;
+  height: 40px;
   border-radius: 7px;
   background-color: white;
-  border-style: solid;
+  border-style: ridge;
   opacity: 0.3;
   border-color: black;
 }

@@ -1,19 +1,19 @@
 .mx-3 {
   text-decoration: none;
   color: black;
-  font-family: 'Gloria Hallelujah', cursive;
+  font-family: 'Milonga', cursive;
   }
 
 .navbar {
-  background-color: #e7eefd;
+  background-image: radial-gradient(100% 100% at 100% 0, #e7eefd 0, #a2adff 100%);
   padding: 0;
 }
 
 .navbar-brand {
   text-decoration: none;
   color: black;
-  font-family: 'Gloria Hallelujah', cursive;
-  font-size: 30px;
+  font-family: 'Tangerine', cursive;
+  font-size: 40px;
   display: inline-block;
   vertical-align: middle;
 }
