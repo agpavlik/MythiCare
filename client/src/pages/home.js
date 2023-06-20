@@ -14,7 +14,7 @@ const Home = () => {
         </div>
 
         <div className="home-box-user">
-          <Link to={"/allsitters"}>
+          <Link to={"/sitters"}>
             <button type="button" className="button-home-page">
               <h3>Find a sitter</h3>
             </button>

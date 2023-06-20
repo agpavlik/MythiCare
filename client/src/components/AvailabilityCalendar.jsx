@@ -3,10 +3,11 @@ import axios from 'axios';
 import DateRangePicker from './DateRangePicker';
 import 'react-calendar/dist/Calendar.css';
 import BookingRequest from './BookingRequest';
+import { useParams } from 'react-router-dom';
 
 const AvailabilityCalendar = (props) => {
   const { sitterId, nightly_rate } = props;
-  const sitter_id = sitterId;
+  const {id} = useParams;
 
   const [availability, setAvailability] = useState([]);
   const [selectedRange, setSelectedRange] = useState({ start: null, end: null });
@@ -19,7 +20,7 @@ const AvailabilityCalendar = (props) => {
   useEffect(() => {
     const fetchAvailability = async () => {
       try {
-        const response = await axios.get(`/sitters/${sitter_id}/availability`);
+        const response = await axios.get(`/sitters/${id}/availability`);
         console.log(response);
         setAvailability(response.data.availability);
       } catch (error) {
@@ -39,7 +40,7 @@ const AvailabilityCalendar = (props) => {
 
     fetchAvailability();
     fetchPets();
-  }, [sitter_id]);
+  }, [id]);
 
   useEffect(() => {
     const calculateFee = () => {
@@ -65,7 +66,7 @@ const AvailabilityCalendar = (props) => {
     try {
       const bookingData = {
         petId: selectedPet,
-        sitter_id,
+        sitter_id: id,
         startDate: selectedRange.start.toISOString().slice(0, 10),
         endDate: selectedRange.end.toISOString().slice(0, 10),
         fee: fee,
