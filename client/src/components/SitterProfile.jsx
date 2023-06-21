@@ -3,6 +3,8 @@ import axios from 'axios';
 import "../styles/SitterProfile.css";
 import ServiceRequestsList from './ServiceRequestsList';
 import Layout from './layout';
+import Layout from '../components/layout'
+import "../styles/SitterProfile.css";
 
 const SitterProfile = ({bookingRequests}) => {
   const [sitter, setSitter] = useState(null);
@@ -29,15 +31,45 @@ const SitterProfile = ({bookingRequests}) => {
 
   return (
     <Layout>
-        <h1 className='sitterprofile-header'>My Sitter Profile</h1>
-      <div className='sitterprofile-container'>
-        <div className='sitterprofile-info'>
-          <img src={sitter.profile_photo} alt={sitter.first_name}></img>
-          <p>{sitter.first_name} {sitter.last_name}</p>
-          <p>Experience: {sitter.experience}</p>
+        <div className="sitter-profile-main">
+          <div className="sitter-profile-info-photo">
+            <img src="kovalsky.jpg" alt="Sitter Photo" className="sitter-profile-photo"/>
+          </div>  
+
+          <div className="sitter-profile-info">
+            <div className="sitter-profile-detailes">
+              <h5>First Name</h5>
+            </div>
+            <div className="sitter-profile-detailes">
+              <h5>Last Name</h5>
+            </div>
+            <div className="sitter-profile-detailes">
+              <h5>Phone</h5>
+            </div>
+            <div className="sitter-profile-detailes">
+              <h5>Email</h5>
+            </div>
+            <div className="sitter-profile-detailes">
+              <h5>Country&nbsp;/&nbsp;Region</h5>
+            </div>
+            <div className="sitter-profile-detailes">
+              <h5>City</h5>
+            </div>
+          </div>  
+            
+          <div className="sitter-profile-info"> 
+            <div className="sitter-profile-detailes">
+              <h5>Bio</h5>
+            </div>
+            <div className="sitter-profile-detailes">
+              <h5>Experience</h5>
+            </div>
+            <div className="sitter-profile-detailes">
+              <h5>Rate</h5>
+            </div>
+          </div>
+
         </div>
-        <div className="service-requests"><ServiceRequestsList bookingRequests={bookingRequests}/></div>
-      </div>
     </Layout>
   );
 };

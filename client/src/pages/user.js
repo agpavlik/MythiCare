@@ -63,7 +63,27 @@ const User = () => {
             </div>
           </div>
           <div className = "user-pets">
-            <h4>Your pets profiles</h4>
+            <div className = "user-pets-names"> 
+              <h4>My pets profiles</h4>
+            </div>
+            <Link to={"/PetProfile/1"} className="user-link">
+              <div className = "user-pet">
+                <img src={""} alt={""} className="user-pet-photo"/>
+                <h5>Name: {""}</h5>
+              </div>
+            </Link>
+            <div className = "user-pet">
+              <img src={""} alt={""} className="user-pet-photo"/>
+              <h5>Name: {""}</h5>
+            </div>
+            <div className = "user-pet">
+              <img src={""} alt={""} className="user-pet-photo"/>
+              <h5>Name: {""}</h5>
+            </div>
+            <div className = "user-pet">
+              <img src={""} alt={""} className="user-pet-photo"/>
+              <h5>Name: {""}</h5>
+            </div>
           </div>
           <div className="user-box">
             <h4 id="create-profile-text">Create profile depending on your porposes</h4>
@@ -74,7 +94,7 @@ const User = () => {
             </Link>
             <Link to={"/SitterForm"} className="user-link">
               <div className="create-profile">
-                <h5> Create Pet Sitter Profile </h5>
+                <h5> Create Sitter Profile </h5>
               </div>
             </Link>
           </div>

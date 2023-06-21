@@ -51,58 +51,50 @@ const PetForm = () => {
               <input type="file" name="photo" onChange={handleInputChange} className="pet-photo"/>
             </div>
 
-            <div className='mb-3'>
+            <div className='mb-3-plus'>
               <label className="pet-form-label">
                 Name
               </label>
               <input type="text" name="name" value={petData.name} onChange={handleInputChange} className="form-control"/>
-            </div>
 
-            <div className='mb-3'>
               <label className="pet-form-label">
-                Age
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Age
               </label>
               <input type="number" name="age" value={petData.age} onChange={handleInputChange} className="form-control"/>
             </div>
 
-            <div className='mb-3'> 
+            <div className='mb-3-plus'>
               <label className="pet-form-label">
                 Size
               </label>
               <input type="text" name="size" value={petData.size} onChange={handleInputChange} className="form-control"/>
-            </div>
 
-            <div className='mb-3'>
               <label className="pet-form-label">
-                Temperament
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Temperament
               </label>
               <input type="text" name="temperament" value={petData.temperament} onChange={handleInputChange} className="form-control"/>
             </div>
 
-            <div className='mb-3'>
+            <div className='mb-3-plus'>
               <label className="pet-form-label">
                 Feeding&nbsp;Info
               </label>
               <input type="text" name="feedingInfo" value={petData.feedingInfo} onChange={handleInputChange} className="form-control"/>
-            </div>
 
-            <div className='mb-3'>
               <label className="pet-form-label">
-                Activity&nbsp;Needs
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Activity&nbsp;Needs
               </label>
               <input type="text" name="activityNeeds" value={petData.activityNeeds} onChange={handleInputChange} className="form-control"/>
             </div>
 
-            <div className='mb-3'>
+            <div className='mb-3-plus'>
               <label className="pet-form-label">
                 Medical&nbsp;Conditions
               </label>
               <input type="text" name="medicalConditions" value={petData.medicalConditions} onChange={handleInputChange} className="form-control"/>
-            </div>
 
-            <div className='mb-3'>
               <label className="pet-form-label">
-                Notes
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Notes
               </label>
               <textarea name="notes" value={petData.notes} onChange={handleInputChange} className="form-control"/>
             </div>

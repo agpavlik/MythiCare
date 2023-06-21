@@ -1,4 +1,4 @@
-.sitter-main {
+.sitter-form-main {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -7,20 +7,26 @@
 
 }
 
-.sitter-input {
-  width: 450px;
+.sitter-form-input {
+  width: 500px;
   background-image: radial-gradient(100% 100% at 100% 0, #e7eefd 0, #a2adff 100%);
   padding: 5px 5px 20px;
   margin: 10px 0;
   border-radius: 7px;
   border-color: #5468ff;
-  border-style: solid;
-  font-family: 'Gloria Hallelujah', cursive;
+  border-style: ridge;
+  font-family: 'Milonga', cursive;
+  font-weight: 50px;
   box-shadow: 0 0 15px 15px white;
 }
 
+.sitter-form-photo {
+  margin-left: 10px;
+  max-width:220px;
+}
+
 @media screen and (max-width: 768px) {
-  .sitter-input {
+  .sitter-form-input {
   width: 350px;
   }
 }
