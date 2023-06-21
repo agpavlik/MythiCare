@@ -10,7 +10,7 @@ const Home = () => {
         <video className='video' src ={beasts} autoPlay loop muted/>
         <div className="home-container">
         <div className="home-box-logo">
-          <img src="logo.png" alt="Logo" id="logo-main"/><span className='home-brand'>MythiCare</span>
+          <img src="logo-main.png" alt="Logo" id="logo-main"/><span className='home-brand'>MythiCare</span>
         </div>
 
         <div className="home-box-user">

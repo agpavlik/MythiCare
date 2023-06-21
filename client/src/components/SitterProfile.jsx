@@ -31,38 +31,39 @@ const SitterProfile = ({bookingRequests}) => {
     <Layout>
         <div className="sitter-profile-main">
           <div className="sitter-profile-info-photo">
-            <img src="kovalsky.jpg" alt="Sitter Photo" className="sitter-profile-photo"/>
+            <img src={sitter.profile_photo} alt={sitter.first_name} className="sitter-profile-photo"/>
             <div className = "sitter-profile-name">
-              <h5> First Name, Last Name</h5>
-          </div>
+              <h5>{sitter.first_name}&nbsp;{sitter.last_name}</h5>
+            </div>
           </div>  
 
           <div className="sitter-profile-info">
-            <div className="sitter-profile-detailes">
-              <h5>Phone</h5>
-            </div>
-            <div className="sitter-profile-detailes">
-              <h5>Email</h5>
-            </div>
-            <div className="sitter-profile-detailes">
-              <h5>Country&nbsp;/&nbsp;Region</h5>
-            </div>
-            <div className="sitter-profile-detailes">
-              <h5>City</h5>
-            </div>
-            <div className="sitter-profile-detailes">
-              <h5>Bio</h5>
-            </div>
-            <div className="sitter-profile-detailes">
-              <h5>Experience</h5>
-            </div>
- 
-            <div className="sitter-profile-detailes">
-              <h5>Rate</h5>
-            </div>
-          </div> 
-          <div className="sitter-profile-info"> 
 
+            <div className="sitter-profile-detailes">
+              Country&nbsp;/&nbsp;Region
+              <h5 className="sitter-profile-output">{sitter.country}</h5>
+            </div>
+            <div className="sitter-profile-detailes">
+              City
+              <h5 className="sitter-profile-output">{sitter.city}</h5>
+            </div>
+            <div className="sitter-profile-detailes">
+              Experience
+              <h5 className="sitter-profile-output">{sitter.experience}</h5>
+            </div>
+            <div className="sitter-profile-detailes">
+              Avg. Rating
+              <h5 className="sitter-profile-output">{sitter.avg_rating}</h5>
+            </div>
+            <div className="sitter-profile-detailes">
+              Bio
+              <h5 className="sitter-profile-output">{sitter.bio}</h5>
+            </div>
+          </div>
+          <div className="sitter-profile-info"> 
+              <div className="service-requests">
+                <ServiceRequestsList bookingRequests={bookingRequests}/>
+              </div>
           </div>
         </div>
     </Layout>

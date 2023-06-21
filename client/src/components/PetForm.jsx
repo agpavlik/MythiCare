@@ -42,7 +42,7 @@ const PetForm = () => {
       <div className = "pet-form-main">
         <div className = "pet-form-input">
           <form onSubmit={handleSubmit} className="container mt-3">
-            <h2>Add a Pet Profile</h2>
+            <h3>Add a Pet Profile</h3>
 
             <div className='mb-3'>
               <label className="pet-form-label">

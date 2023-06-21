@@ -17,15 +17,15 @@ body {
 }
 
 #logo-main{
- width: 300px;
+ width: 200px;
 
 }
 
 .home-brand {
   text-decoration: none;
   color: #e7eefd;
-  font-family: 'Tangerine', bold;
-  font-size: 100px;
+  font-family: 'Expletus Sans', cursive;
+  font-size: 60px;
   display: inline-block;
   vertical-align: middle;
   align-content: left;
@@ -46,10 +46,10 @@ body {
 .home-box{
   display: flex;
   width:auto;
-  margin: 40px 0;
+  margin: 60px 0;
   background-color: transparent;
   font-size: 20px;
-  font-family: 'Milonga', cursive;
+  font-family: 'Dosis', sans-serif;
 }
 
 .home-box-logo{
@@ -62,7 +62,7 @@ body {
   position: static;
   width:auto;
   background-color: transparent;
-  font-family: 'Milonga', cursive;
+  font-family: 'Dosis', sans-serif;
 }
 
 .button-home-page {
@@ -72,7 +72,7 @@ body {
   border-radius: 10px;
   border-color: black;
   background-color: white;
-  padding-top: 3px;
+  padding-top: 5px;
   border-style: solid;
   opacity: 0.3;
 }

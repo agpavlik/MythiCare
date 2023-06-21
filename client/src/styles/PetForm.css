@@ -9,15 +9,15 @@
 }
 
 .pet-form-input {
-  width: 1100px;
+  width: 900px;
   background-image: radial-gradient(100% 100% at 100% 0, #e7eefd 0, #a2adff 100%);
   padding: 5px 5px 20px;
   margin: 10px 0;
   border-radius: 7px;
   border-color: #5468ff;
   border-style: ridge;
-  font-family: 'Milonga', cursive;
-  font-weight: 50px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
   box-shadow: 0 0 15px 15px white;
 }
 .mb-3-plus {

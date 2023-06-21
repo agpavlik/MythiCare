@@ -8,6 +8,8 @@
   margin: 15px 0;
   padding: 20px 20px;
   border-radius: 5px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
 }
 
 .sitter-profile-info {
@@ -47,4 +49,9 @@
 
 .sitter-profile-name {
   margin-top: 20px;
+}
+
+.sitter-profile-output {
+  margin-left: 20px;
+  margin-bottom: 10px;
 }

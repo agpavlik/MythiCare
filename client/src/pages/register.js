@@ -40,7 +40,7 @@ console.log("data", data);
       <div className = "register-main">
         <div className = "register-input">
           <form onSubmit={(e) => onSubmit(e)} className='container mt-3'>
-            <h2>Register</h2>
+            <h3>Register</h3>
 
             <div className='mb-3'>
               <label htmlFor='first_name' className='form-label'>

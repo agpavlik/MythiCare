@@ -12,7 +12,7 @@ const SitterItem = (props) => {
     <Link to={`/sitter/${sitterId}`} className = "sitter-item-link">
         <div className="sitter-item-detailes">
           <img src={profile_photo} alt={first_name} className="sitter-item-photo"/>
-          <div class="sitter-item-info"> <h6>{first_name} {last_name}</h6></div>
+          <div class="sitter-item-info"> <h5>{first_name} {last_name}</h5></div>
           <div class="sitter-item-info">{city}, {country}</div>
           <div class="sitter-item-info">Experience: {experience} years</div>
           <div class="sitter-item-info">{bio}</div>

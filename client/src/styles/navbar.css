@@ -1,7 +1,8 @@
 .mx-3 {
   text-decoration: none;
   color: black;
-  font-family: 'Milonga', cursive;
+  font-family: 'Dosis', sans-serif;
+  font-size: 20px;
   }
 
 .mx-3:hover {
@@ -16,14 +17,15 @@
 .navbar-brand {
   text-decoration: none;
   color: black;
-  font-family: 'Tangerine', cursive;
-  font-size: 40px;
+  font-family: 'Expletus Sans', cursive;
+  font-size: 30px;
   display: inline-block;
   vertical-align: middle;
+  padding: 0;
 }
 
 #logo-nav{
-  width: 80px;
+  width: 70px;
   margin: 0;
-  padding: 0;
+  padding: -5px;
 }

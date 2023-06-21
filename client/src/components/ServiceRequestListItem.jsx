@@ -72,17 +72,16 @@ const ServiceRequestListItem = (props) => {
 
   return (
     <>
-      <Link to={`/petprofile/${petId}`}>
-        <article id='booking-request'>
-          <img src={petPhoto} alt={petName} className="pet--photo" />
-          <div className="pet--info">
-            <div>Name: {petName}</div>
-            <div>Age: {petAge}</div>
-            Requested Dates:
-            <div>{newStartDate} - {newEndDate}</div>
-            Total fee: ${fee}
+      <Link to={`/petprofile/${petId}`} className = "booking-pet-link">
+        <div id='booking-request'>
+          <img src={petPhoto} alt={petName} className="booking-pet-photo" />
+          <div className="booking-pet-info">
+            <h6>Name:&nbsp;{petName}</h6>
+            <h6>Age:&nbsp;{petAge}</h6>
+            <h6>Requested Dates:<br/>{newStartDate}&nbsp;-&nbsp;{newEndDate}</h6>
+            <h6>Total fee:&nbsp;${fee}</h6>
           </div>
-        </article>
+        </div>
       </Link>
       <BookingRequest
         onAccept={handleAcceptBooking}
@@ -107,7 +106,5 @@ const ServiceRequestListItem = (props) => {
     </>
   );
 };
-
-export default ServiceRequestListItem;
 
 export default ServiceRequestListItem;

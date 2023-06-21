@@ -1,6 +1,6 @@
 #service-requests {
   display: flex;
-  width: 30%;
-  border: solid 4px #545149;
-  gap: 10px;
+  flex-direction: column;
+  width: 100%;
+  margin:10px 5px;
 }

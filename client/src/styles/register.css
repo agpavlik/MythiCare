@@ -24,8 +24,8 @@
   border-radius: 7px;
   border-color: #5468ff;
   border-style: ridge;
-  font-family: 'Milonga', cursive;
-  font-weight: 50px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 17px;
   box-shadow: 0 0 15px 15px white;
 }
 
@@ -50,7 +50,8 @@
   color: #fff;
   cursor: pointer;
   display: inline-flex;
-  font-family: 'Milonga', cursive;
+  font-family: 'Dosis', sans-serif;
+  font-size: 17px;
   height: 35px;
   justify-content: center;
   line-height: 1;

@@ -38,39 +38,39 @@ const PetProfile = () => {
         <div className="sitter-profile-info-photo">
           <img src={pet.profile_photo} alt={pet.name} className="pet-profile-photo"/>
           <br/>
-          <h5>{pet.name}</h5>
+          <h4>{pet.name}</h4>
         </div>  
 
         <div className="pet-profile-info">
           <div className="pet-profile-detailes">
-            <p>Age:</p>
+            Age:
             <h5 className="pet-profile-output">{pet.age}</h5>
           </div>
           <div className="pet-profile-detailes">
-            <p>Size: </p>
+            Size:
             <h5 className="pet-profile-output">{pet.size}</h5>
           </div>
           <div className="pet-profile-detailes">
-            <p>Temperament: </p>
+            Temperament:
             <h5 className="pet-profile-output">{pet.temperament}</h5>
           </div>
           <div className="pet-profile-detailes">
-            <p>Medical Conditions: </p>
+            Medical Conditions:
             <h5 className="pet-profile-output">{pet.medical_conditions}</h5>
           </div>
         </div>  
           
         <div className="pet-profile-info">
           <div className="pet-profile-detailes">
-            <p>Feeding Instructions: </p>
+            Feeding Instructions:
             <h5 className="pet-profile-output">{pet.feeding_instructions}</h5>
           </div>
           <div className="pet-profile-detailes">
-            <p>Activity Needs: </p>
+            Activity Needs:
             <h5 className="pet-profile-output">{pet.activity_needs}</h5>
           </div>
           <div className="pet-profile-detailes">
-            <p>Notes: </p>
+            Notes:
             <h5 className="pet-profile-output">{pet.notes}</h5>
           </div>
         </div>

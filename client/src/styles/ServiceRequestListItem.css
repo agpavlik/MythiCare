@@ -1,11 +1,30 @@
 #booking-request {
   width: 100%;
   display: flex;
-  gap: 15px;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 30px;
 }
 
-.pet--info {
+.booking-pet-info {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  padding-top: 10px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 20px;
 }
+
+.booking-pet-link{  
+  text-decoration: none !important;
+  cursor: pointer;
+  color: black;
+}
+
+.booking-pet-photo {
+  border-radius: 100%;
+  width: 150px;
+  height: 150px;
+  border-color: #5468ff;
+  border-style: ridge;
+}
+

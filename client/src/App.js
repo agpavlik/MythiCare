@@ -83,6 +83,7 @@ function App() {
 
         <Route element={<PrivateRoutes />}>
           <Route path='/user' element={<User />} />
+          <Route path='/sitter/:id' element={<SittersPage/>} />
           <Route path='/sitter-profile' element={<SitterProfile bookingRequests={bookingRequests}/>} />
         </Route>
 

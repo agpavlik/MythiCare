@@ -34,7 +34,7 @@ const SitterForm = () => {
       <div className = "sitter-form-main">
         <div className = "sitter-form-input">
           <form onSubmit={handleSubmit} className="container mt-3">
-            <h2>Sitter Form</h2>
+            <h3>Sitter Form</h3>
             <div className='mb-3'>
 
               <label className="sitter-form-label">
