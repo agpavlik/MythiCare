@@ -47,14 +47,14 @@ const SitterForm = () => {
               <label className='sitter-form-label'>
                 Country&nbsp;/&nbsp;Region
               </label>
-              <input type="text" value={nightly_rate} className='form-control'/>
+              <input type="text" value={""} className='form-control'/>
             </div>
 
             <div className='mb-3'>
               <label className='sitter-form-label'>
                 City
               </label>
-              <input type="text" value={nightly_rate} className='form-control'/>
+              <input type="text" value={""} className='form-control'/>
             </div>
 
             <div className='mb-3'>

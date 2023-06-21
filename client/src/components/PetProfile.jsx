@@ -37,36 +37,41 @@ const PetProfile = () => {
       <div className="pet-profile-main">
         <div className="sitter-profile-info-photo">
           <img src={pet.profile_photo} alt={pet.name} className="pet-profile-photo"/>
+          <br/>
+          <h5>{pet.name}</h5>
         </div>  
 
         <div className="pet-profile-info">
           <div className="pet-profile-detailes">
-            <h5>Name:</h5>
-            <p>{pet.name}</p>
+            <p>Age:</p>
+            <h5 className="pet-profile-output">{pet.age}</h5>
           </div>
           <div className="pet-profile-detailes">
-            <h5>Age: {pet.age}</h5>
+            <p>Size: </p>
+            <h5 className="pet-profile-output">{pet.size}</h5>
           </div>
           <div className="pet-profile-detailes">
-            <h5>Size: {pet.size}</h5>
+            <p>Temperament: </p>
+            <h5 className="pet-profile-output">{pet.temperament}</h5>
           </div>
           <div className="pet-profile-detailes">
-            <h5>Temperament: {pet.temperament}</h5>
-          </div>
-          <div className="pet-profile-detailes">
-            <h5>Medical Conditions: {pet.medical_conditions}</h5>
+            <p>Medical Conditions: </p>
+            <h5 className="pet-profile-output">{pet.medical_conditions}</h5>
           </div>
         </div>  
           
         <div className="pet-profile-info">
           <div className="pet-profile-detailes">
-            <h5>Feeding Instructions: {pet.feeding_instructions}</h5>
+            <p>Feeding Instructions: </p>
+            <h5 className="pet-profile-output">{pet.feeding_instructions}</h5>
           </div>
           <div className="pet-profile-detailes">
-            <h5>Activity Needs: {pet.activity_needs}</h5>
+            <p>Activity Needs: </p>
+            <h5 className="pet-profile-output">{pet.activity_needs}</h5>
           </div>
           <div className="pet-profile-detailes">
-            <h5>Activity Needs: {pet.activity_needs}</h5>
+            <p>Notes: </p>
+            <h5 className="pet-profile-output">{pet.notes}</h5>
           </div>
         </div>
 

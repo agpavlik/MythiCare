@@ -4,6 +4,7 @@ import DateRangePicker from './DateRangePicker';
 import 'react-calendar/dist/Calendar.css';
 import BookingRequest from './BookingRequest';
 import { useParams } from 'react-router-dom';
+import "../styles/AvailabilityCalendar.css";
 
 const AvailabilityCalendar = (props) => {
   const { sitterId, nightly_rate } = props;
@@ -84,8 +85,8 @@ const AvailabilityCalendar = (props) => {
   };
 
   return (
-    <div>
-      <div>
+    <div className = "calendar-main">
+      <div className = "calendar-pet-select">
         <label htmlFor="petSelect"></label>
         <select id="petSelect" value={selectedPet} onChange={(e) => setSelectedPet(11)}>
           <option value="">Select a pet</option>
@@ -96,20 +97,23 @@ const AvailabilityCalendar = (props) => {
           ))}
         </select>
       </div>
-      <DateRangePicker onChange={handleRangeSelect} />
-      <div>
-        <h4>Selected Dates:</h4>
-        {selectedRange.start && selectedRange.end ? (
-          <p>
-            {selectedRange.start.toLocaleDateString()} - {selectedRange.end.toLocaleDateString()}
-          </p>
-        ) : (
-          <p>No date range selected</p>
-        )}
-        <p>Total Due to Sitter: ${fee}</p>
+      <div className = "calendar-date-range">
+          <DateRangePicker onChange={handleRangeSelect} />
+        <div>
+          <h5>Selected Dates:</h5>
+          {selectedRange.start && selectedRange.end ? (
+            <p>
+              {selectedRange.start.toLocaleDateString()} - {selectedRange.end.toLocaleDateString()}
+            </p>
+          ) : (
+            <p>No date range selected</p>
+          )}
+          <p>Total Due to Sitter: ${fee}</p>
+        </div>
       </div>
-      <button onClick={handleSubmit}>Submit Booking</button>
-
+      <div className = "calendar-btn">
+        <button onClick={handleSubmit} className="button-29">Submit Booking</button>
+      </div>
       {/* {bookingRequest && (
         <BookingRequest
           booking={bookingRequest}

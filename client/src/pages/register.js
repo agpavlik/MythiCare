@@ -34,7 +34,9 @@ console.log("data", data);
   }
 
   return (
+
     <Layout>
+          <div className = "alter-body">
       <div className = "register-main">
         <div className = "register-input">
           <form onSubmit={(e) => onSubmit(e)} className='container mt-3'>
@@ -129,8 +131,9 @@ console.log("data", data);
             </button>
           </form>
         </div>
-      </div>
+      </div> </div>
     </Layout>
+ 
   )
 }
 

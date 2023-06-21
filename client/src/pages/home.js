@@ -37,7 +37,7 @@ const Home = () => {
         <div className="home-box">
           <Link to={"/about"}>
             <button type="button" className="button-about">
-              Information about app
+              About Us
             </button>
           </Link>
         </div>

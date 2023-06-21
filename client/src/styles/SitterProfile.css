@@ -22,7 +22,7 @@
 
 .sitter-profile-detailes {
   width: 90%;
-  margin: 5%;
+  margin: 10px 5%;
   height: 50px;
   border-radius: 5px;
   padding: 5px;
@@ -30,10 +30,11 @@
 
 .sitter-profile-info-photo {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 300px;
-  height: 300px;
+  height: 400px;
   padding: 10px;
 }
 .sitter-profile-photo {
@@ -42,4 +43,8 @@
   height: 250px;
   border-color: #5468ff;
   border-style: ridge;
+}
+
+.sitter-profile-name {
+  margin-top: 20px;
 }

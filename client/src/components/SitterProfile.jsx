@@ -31,15 +31,12 @@ const SitterProfile = () => {
         <div className="sitter-profile-main">
           <div className="sitter-profile-info-photo">
             <img src="kovalsky.jpg" alt="Sitter Photo" className="sitter-profile-photo"/>
+            <div className = "sitter-profile-name">
+              <h5> First Name, Last Name</h5>
+          </div>
           </div>  
 
           <div className="sitter-profile-info">
-            <div className="sitter-profile-detailes">
-              <h5>First Name</h5>
-            </div>
-            <div className="sitter-profile-detailes">
-              <h5>Last Name</h5>
-            </div>
             <div className="sitter-profile-detailes">
               <h5>Phone</h5>
             </div>
@@ -52,20 +49,20 @@ const SitterProfile = () => {
             <div className="sitter-profile-detailes">
               <h5>City</h5>
             </div>
-          </div>  
-            
-          <div className="sitter-profile-info"> 
             <div className="sitter-profile-detailes">
               <h5>Bio</h5>
             </div>
             <div className="sitter-profile-detailes">
               <h5>Experience</h5>
             </div>
+ 
             <div className="sitter-profile-detailes">
               <h5>Rate</h5>
             </div>
-          </div>
+          </div> 
+          <div className="sitter-profile-info"> 
 
+          </div>
         </div>
     </Layout>
   );
