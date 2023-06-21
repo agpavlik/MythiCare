@@ -156,14 +156,14 @@ router.get('/:id/booking-requests', async (req, res) => {
   })
 });
 
-router.patch('/:id/booking-requests', async (req, res) => {
+router.patch('/:id/booking-requests/:bookingId', async (req, res) => {
   try {
-    const { sitterId } = req.params;
+    const { id, bookingId } = req.params;
     const { sitterAccepted, sitterRejected } = req.body;
 
     // Update the booking status in the database
     const updateBookingQuery = 'UPDATE bookings SET sitter_accepted = $1, sitter_rejected = $2 WHERE id = $3';
-    await db.query(updateBookingQuery, [sitterAccepted, sitterRejected, sitterId]);
+    await db.query(updateBookingQuery, [sitterAccepted, sitterRejected, bookingId]);
 
     res.sendStatus(200);
   } catch (error) {

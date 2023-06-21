@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import "../styles/SitterProfile.css";
 import ServiceRequestsList from './ServiceRequestsList';
+import Layout from './layout';
 
 const SitterProfile = ({bookingRequests}) => {
   const [sitter, setSitter] = useState(null);
@@ -26,15 +28,17 @@ const SitterProfile = ({bookingRequests}) => {
   }
 
   return (
-    <div>
-      <h1>Sitter Profile</h1>
-      <p>First Name: {sitter.firstName}</p>
-      <p>Last Name: {sitter.lastName}</p>
-      <p>Address: {sitter.address}</p>
-      <p>Experience: {sitter.experience}</p>
-      <p>Contact Info: {sitter.contactInfo}</p>
-      <ServiceRequestsList bookingRequests={bookingRequests}/>
-    </div>
+    <Layout>
+        <h1 className='sitterprofile-header'>My Sitter Profile</h1>
+      <div className='sitterprofile-container'>
+        <div className='sitterprofile-info'>
+          <img src={sitter.profile_photo} alt={sitter.first_name}></img>
+          <p>{sitter.first_name} {sitter.last_name}</p>
+          <p>Experience: {sitter.experience}</p>
+        </div>
+        <div className="service-requests"><ServiceRequestsList bookingRequests={bookingRequests}/></div>
+      </div>
+    </Layout>
   );
 };
 

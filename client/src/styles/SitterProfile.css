@@ -1,0 +1,18 @@
+.sitterprofile-header {
+  text-align: center;
+  margin: 20px;
+}
+
+.sitterprofile-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sitterprofile-info > img {
+  border-radius: 50%;
+}
+
+.service-requests {
+  border: solid black;
+  padding: 20px;
+}

@@ -25,6 +25,7 @@
     "passport-jwt": "^4.0.1",
     "pg": "^8.11.0",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.7.4",
     "react-calendar": "^4.3.0",
     "react-date-range": "^1.4.0",
     "react-datepicker": "^4.14.0",
