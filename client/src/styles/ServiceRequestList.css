@@ -1,0 +1,6 @@
+#service-requests {
+  display: flex;
+  width: 30%;
+  border: solid 4px #545149;
+  gap: 10px;
+}
