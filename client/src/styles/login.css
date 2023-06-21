@@ -1,4 +1,7 @@
-
+body {
+  background-image: url('/public/beasts-opacity.jpg');
+  background-size: cover;
+}
 
 .login-main {
   display: flex;

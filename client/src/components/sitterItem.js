@@ -10,7 +10,6 @@ const SitterItem = (props) => {
 
   return (
     <Link to={`/sitter/${sitterId}`} className = "sitter-item-link">
-      <article id='sitter'>
         <div className="sitter-item-detailes">
           <img src={profile_photo} alt={first_name} className="sitter-item-photo"/>
           <div class="sitter-item-info"> <h6>{first_name} {last_name}</h6></div>
@@ -20,7 +19,6 @@ const SitterItem = (props) => {
           <div class="sitter-item-info">Avg. Rating: {avg_rating}</div>
           <div class="sitter-item-info">Price from ${nightly_rate} per night</div>
         </div>
-      </article>
     </Link>
   
     )

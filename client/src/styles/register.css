@@ -1,4 +1,10 @@
 
+body {
+  background-image: url('/public/beasts-opacity.jpg');
+  background-size: cover;
+}
+
+
 .register-main {
   display: flex;
   justify-content: center;
