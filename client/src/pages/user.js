@@ -48,7 +48,7 @@ const User = () => {
       <Layout>
         <div className="user-main">
           <div className="user-info">
-            <h4>User info</h4>
+            <h4>My main profile</h4>
             <div className="user-detailes">
               <h5>First Name</h5>
             </div>

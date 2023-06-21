@@ -38,7 +38,7 @@ const SitterProfile = ({bookingRequests}) => {
           </div>  
 
           <div className="sitter-profile-info">
-
+            <h4>My pet sitter profile</h4>
             <div className="sitter-profile-detailes">
               Country&nbsp;/&nbsp;Region
               <h5 className="sitter-profile-output">{sitter.country}</h5>
@@ -60,10 +60,11 @@ const SitterProfile = ({bookingRequests}) => {
               <h5 className="sitter-profile-output">{sitter.bio}</h5>
             </div>
           </div>
-          <div className="sitter-profile-info"> 
-              <div className="service-requests">
-                <ServiceRequestsList bookingRequests={bookingRequests}/>
-              </div>
+          <div className="sitter-profile-info">
+            <h4>Pending Booking Requests</h4>
+            <div className="service-requests">
+              <ServiceRequestsList bookingRequests={bookingRequests}/>
+            </div>
           </div>
         </div>
     </Layout>
