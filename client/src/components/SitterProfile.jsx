@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import Layout from '../components/layout'
+import Layout from './layout'
 import "../styles/SitterProfile.css";
+import ServiceRequestsList from './ServiceRequestsList';
 
-const SitterProfile = () => {
+const SitterProfile = ({bookingRequests}) => {
   const [sitter, setSitter] = useState(null);
   
   useEffect(() => {

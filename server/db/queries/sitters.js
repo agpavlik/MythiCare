@@ -23,7 +23,12 @@ const fetchNightlyRate = id => {
 }
 
 const getBookingsById = id => {
-	return db.query("SELECT * FROM bookings JOIN pet_sitters ON sitter_id = pet_sitters.id WHERE pet_sitters.id = $1;", [id]).then(data => {
+	return db.query(`
+		SELECT * 
+		FROM bookings 
+		JOIN pet_sitters ON sitter_id = pet_sitters.id
+		JOIN pet_owners ON pets.owner_id = pet_owners.id
+		WHERE pet_sitters.id = $1;", [id]).then(data => {
 		return data.rows;
 	})
 }

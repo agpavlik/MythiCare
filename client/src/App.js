@@ -39,7 +39,7 @@ const RestrictedRoutes = () => {
 function App() {
 
   const [sitters, setSitters] = useState();
-  const [bookingRequests, setBookingRequests] = useState(null)
+  const [bookingRequests, setBookingRequests] = useState([])
 
 
 
@@ -61,8 +61,8 @@ function App() {
     const fetchBookingRequest = async () => {
       try {
         const response = await axios.get(`/sitters/1/booking-requests`);
-        console.log(response.data.bookings[0]);
-        setBookingRequests(response);
+        const data = response.data.bookings;
+        setBookingRequests(data);
       } catch (error) {
         console.error(error);
       }
@@ -83,7 +83,7 @@ function App() {
 
         <Route element={<PrivateRoutes />}>
           <Route path='/user' element={<User />} />
-          <Route path='/sitter-profile' element={<SitterProfile />} />
+          <Route path='/sitter-profile' element={<SitterProfile bookingRequests={bookingRequests}/>} />
           <Route path='/sitter/:id' element={<SittersPage/>} />
         </Route>
 

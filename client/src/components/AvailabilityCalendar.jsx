@@ -67,7 +67,7 @@ const AvailabilityCalendar = (props) => {
     try {
       const bookingData = {
         petId: selectedPet,
-        sitter_id: id,
+        sitter_id: 1,
         startDate: selectedRange.start.toISOString().slice(0, 10),
         endDate: selectedRange.end.toISOString().slice(0, 10),
         fee: fee,
@@ -114,13 +114,6 @@ const AvailabilityCalendar = (props) => {
       <div className = "calendar-btn">
         <button onClick={handleSubmit} className="button-29">Submit Booking</button>
       </div>
-      {/* {bookingRequest && (
-        <BookingRequest
-          booking={bookingRequest}
-          onAccept={handleAcceptBooking}
-          onReject={handleRejectBooking}
-        />
-      )} */}
     </div>
   );
 };

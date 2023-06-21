@@ -1,4 +1,4 @@
-import Layout from '../components/layout'
+import Layout from '../layout'
 import "../styles/sitterItem.css";
 import React from "react";
 import {Link} from "react-router-dom";
