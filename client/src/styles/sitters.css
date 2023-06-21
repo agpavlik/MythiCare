@@ -1,0 +1,12 @@
+#sitter-page {
+  display: flex;
+}
+
+.sitter-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.sitter > img {
+  border-radius: 50%;
+}
