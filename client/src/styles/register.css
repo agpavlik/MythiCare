@@ -1,6 +1,6 @@
 
-.alter body {
-  background-image: url('/public/beasts-opacity.jpg');
+.alter-body {
+  background-image: url('/public/beasts-feature-opacity.jpg');
   background-size: cover;
   margin: 0;
   width: 100%;

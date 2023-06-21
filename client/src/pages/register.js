@@ -34,106 +34,105 @@ console.log("data", data);
   }
 
   return (
+    <div className = "alter-body">
+      <Layout>
+        <div className = "register-main">
+          <div className = "register-input">
+            <form onSubmit={(e) => onSubmit(e)} className='container mt-3'>
+              <h3>Register</h3>
 
-    <Layout>
-          <div className = "alter-body">
-      <div className = "register-main">
-        <div className = "register-input">
-          <form onSubmit={(e) => onSubmit(e)} className='container mt-3'>
-            <h3>Register</h3>
+              <div className='mb-3'>
+                <label htmlFor='first_name' className='form-label'>
+                  First Name
+                </label>
+                <input
+                  onChange={(e) => onChange(e)}
+                  type='text'
+                  className='form-control'
+                  id='first_name'
+                  name='first_name'
+                  value={values.first_name}
+                  //placeholder='enter your First Name'
+                  required
+                />
+              </div>
 
-            <div className='mb-3'>
-              <label htmlFor='first_name' className='form-label'>
-                First Name
-              </label>
-              <input
-                onChange={(e) => onChange(e)}
-                type='text'
-                className='form-control'
-                id='first_name'
-                name='first_name'
-                value={values.first_name}
-                //placeholder='enter your First Name'
-                required
-              />
-            </div>
+              <div className='mb-3'>
+                <label htmlFor='last_name' className='form-label'>
+                  Last Name
+                </label>
+                <input
+                  onChange={(e) => onChange(e)}
+                  type='text'
+                  className='form-control'
+                  id='last_name'
+                  name='last_name'
+                  value={values.last_name}
+                  //placeholder='enter your Last Name'
+                  required
+                />
+              </div>
 
-            <div className='mb-3'>
-              <label htmlFor='last_name' className='form-label'>
-                Last Name
-              </label>
-              <input
-                onChange={(e) => onChange(e)}
-                type='text'
-                className='form-control'
-                id='last_name'
-                name='last_name'
-                value={values.last_name}
-                //placeholder='enter your Last Name'
-                required
-              />
-            </div>
+              <div className='mb-3'>
+                <label htmlFor='phone' className='form-label'>
+                  Phone
+                </label>
+                <input
+                  onChange={(e) => onChange(e)}
+                  type='tel'
+                  className='form-control'
+                  id='phone'
+                  name='phone'
+                  //pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'
+                  value={values.phone}
+                  //placeholder='###-###-####'
+                  required
+                />
+              </div>
 
-            <div className='mb-3'>
-              <label htmlFor='phone' className='form-label'>
-                Phone
-              </label>
-              <input
-                onChange={(e) => onChange(e)}
-                type='tel'
-                className='form-control'
-                id='phone'
-                name='phone'
-                //pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'
-                value={values.phone}
-                //placeholder='###-###-####'
-                required
-              />
-            </div>
+              <div className='mb-3'>
+                <label htmlFor='email' className='form-label'>
+                  Email address
+                </label>
+                <input
+                  onChange={(e) => onChange(e)}
+                  type='email'
+                  className='form-control'
+                  id='email'
+                  name='email'
+                  value={values.email}
+                  //placeholder='youremail@gmail.com'
+                  required
+                />
+              </div>
 
-            <div className='mb-3'>
-              <label htmlFor='email' className='form-label'>
-                Email address
-              </label>
-              <input
-                onChange={(e) => onChange(e)}
-                type='email'
-                className='form-control'
-                id='email'
-                name='email'
-                value={values.email}
-                //placeholder='youremail@gmail.com'
-                required
-              />
-            </div>
+              <div className='mb-3'>
+                <label htmlFor='password' className='form-label'>
+                  Password
+                </label>
+                <input
+                  onChange={(e) => onChange(e)}
+                  type='password'
+                  value={values.password}
+                  className='form-control'
+                  id='password'
+                  name='password'
+                  //placeholder='enter your password'
+                  required
+                />
+              </div>
 
-            <div className='mb-3'>
-              <label htmlFor='password' className='form-label'>
-                Password
-              </label>
-              <input
-                onChange={(e) => onChange(e)}
-                type='password'
-                value={values.password}
-                className='form-control'
-                id='password'
-                name='password'
-                //placeholder='enter your password'
-                required
-              />
-            </div>
+              <div style={{ color: 'red', margin: '10px 0' }}>{error}</div>
+              <div style={{ color: 'green', margin: '10px 0' }}>{success}</div>
 
-            <div style={{ color: 'red', margin: '10px 0' }}>{error}</div>
-            <div style={{ color: 'green', margin: '10px 0' }}>{success}</div>
-
-            <button type='submit' className='button-29'>
-              Submit
-            </button>
-          </form>
-        </div>
-      </div> </div>
-    </Layout>
- 
+              <button type='submit' className='button-29'>
+                Submit
+              </button>
+            </form>
+          </div>
+        </div> 
+      </Layout>
+    </div>
   )
 }
 

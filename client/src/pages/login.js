@@ -32,53 +32,55 @@ const Login = () => {
   }
 
   return (
-    <Layout>
-      <div className = "login-main">
-        <div className = "login-input">
-          <form onSubmit={(e) => onSubmit(e)} className='container mt-3'>
-            <h3>Login</h3>
+    <div className = "alter-body">
+      <Layout>
+        <div className = "login-main">
+          <div className = "login-input">
+            <form onSubmit={(e) => onSubmit(e)} className='container mt-3'>
+              <h3>Login</h3>
 
-            <div className='mb-3'>
-              <label htmlFor='email' className='form-label'>
-                Email address
-              </label>
-              <input
-                onChange={(e) => onChange(e)}
-                type='email'
-                className='form-control'
-                id='email'
-                name='email'
-                value={values.email}
-                //placeholder='youremail@gmail.com'
-                required
-              />
-            </div>
+              <div className='mb-3'>
+                <label htmlFor='email' className='form-label'>
+                  Email address
+                </label>
+                <input
+                  onChange={(e) => onChange(e)}
+                  type='email'
+                  className='form-control'
+                  id='email'
+                  name='email'
+                  value={values.email}
+                  //placeholder='youremail@gmail.com'
+                  required
+                />
+              </div>
 
-            <div className='mb-3'>
-              <label htmlFor='password' className='form-label'>
-                Password
-              </label>
-              <input
-                onChange={(e) => onChange(e)}
-                type='password'
-                value={values.password}
-                className='form-control'
-                id='password'
-                name='password'
-                //placeholder='passwod'
-                required
-              />
-            </div>
+              <div className='mb-3'>
+                <label htmlFor='password' className='form-label'>
+                  Password
+                </label>
+                <input
+                  onChange={(e) => onChange(e)}
+                  type='password'
+                  value={values.password}
+                  className='form-control'
+                  id='password'
+                  name='password'
+                  //placeholder='passwod'
+                  required
+                />
+              </div>
 
-            <div style={{ color: 'red', margin: '10px 0' }}>{error}</div>
+              <div style={{ color: 'red', margin: '10px 0' }}>{error}</div>
 
-            <button type='submit' className='button-29'>
-              Submit
-            </button>
-          </form>
+              <button type='submit' className='button-29'>
+                Submit
+              </button>
+            </form>
+          </div>
         </div>
-      </div>
-    </Layout>
+      </Layout>
+    </div>
   )
 }
 
