@@ -65,7 +65,7 @@ const AvailabilityCalendar = (props) => {
   const handleSubmit = async () => {
     try {
       const bookingData = {
-        petId: selectedPet,
+        petId: 11,
         sitter_id: 1,
         startDate: selectedRange.start.toISOString().slice(0, 10),
         endDate: selectedRange.end.toISOString().slice(0, 10),
@@ -87,7 +87,7 @@ const AvailabilityCalendar = (props) => {
     <div>
       <div>
         <label htmlFor="petSelect"></label>
-        <select id="petSelect" value={selectedPet} onChange={(e) => setSelectedPet(11)}>
+        <select id="petSelect" value={selectedPet} onChange={(e) => setSelectedPet(e.pet_id)}>
           <option value="">Select a pet</option>
           {pets.map((pet) => (
             <option key={pet.id} value={pet.id}>

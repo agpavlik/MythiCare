@@ -202,5 +202,21 @@ router.post('/:id/bookings', async (req, res) => {
   }
 });
 
+// DELETE booking request after rejection
+router.delete('/sitters/:sitterId/booking-requests/:bookingId', async (req, res) => {
+  const sitterId = req.params.sitterId;
+  const bookingId = req.params.bookingId;
+
+  try {
+    const deleteBookingQuery = 'DELETE FROM bookings WHERE sitter_id = $1 AND id = $2';
+    await db.query(deleteBookingQuery, [sitterId, bookingId]);
+
+    res.status(200).json({ message: 'Booking request deleted successfully.' });
+  } catch (error) {
+    console.error('Error deleting booking request:', error);
+    res.status(500).json({ error: 'An error occurred while deleting the booking request.' });
+  }
+});
+
 module.exports = router;
 

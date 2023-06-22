@@ -24,16 +24,16 @@ const SittersPage = () => {
 
   return (
     <Layout>
-      <div class = "sitters-page-main">
-        <div class = "sitter-page-detailes">
+      <div className= "sitters-page-main">
+        <div className= "sitter-page-detailes">
           <h4>{sitter.first_name} &nbsp;{sitter.last_name}</h4>
           <img src={sitter.profile_photo} alt={sitter.first_name} className="sitter-page-photo"/>
           <article id='sitter'>
-            <div class="sitter-page-info">{sitter.city}, {sitter.country}</div>
-            <div class="sitter-page-info">{sitter.bio}</div>
-            <div class="sitter-page-info">Experience: {sitter.experience} years</div>
-            <div class="sitter-page-info">Avg. Rating: {sitter.avg_rating}</div>
-            <div class="sitter-page-info">Price from ${sitter.nightly_rate} per night</div>
+            <div className="sitter-page-info">{sitter.city}, {sitter.country}</div>
+            <div className="sitter-page-info">{sitter.bio}</div>
+            <div className="sitter-page-info">Experience: {sitter.experience} years</div>
+            <div className="sitter-page-info">Avg. Rating: {sitter.avg_rating}</div>
+            <div className="sitter-page-info">Price from ${sitter.nightly_rate} per night</div>
           </article>
         </div>
         <div className = "sitter-page-calendar">
