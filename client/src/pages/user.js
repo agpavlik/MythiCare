@@ -90,19 +90,17 @@ const User = () => {
             </div>
           </div>
           <div className = "user-pets">
-            <div className = "user-pets-names"> 
               <h4>My pets</h4>
-            </div>
-            {pets.map(pet => {
-              return <>
-                <Link to={`/PetProfile/${pet.pet_id}`} className="user-link">
-                  <div className = "user-pet">
-                    <img src={pet.pet_photo} alt={pet.name} className="user-pet-photo"/>
-                    <h5>{pet.name}</h5>
-                  </div>
-                </Link> 
-                </>
-              })}
+              {pets.map(pet => {
+                return <>
+                  <Link to={`/PetProfile/${pet.pet_id}`} className="user-link">
+                    <div className = "user-pet">
+                      <img src={pet.pet_photo} alt={pet.name} className="user-pet-photo"/>
+                      <h5>{pet.name}</h5>
+                    </div>
+                  </Link> 
+                  </>
+                })}
           </div>
           <div className="user-box">
             <h4 id="create-profile-text">Create profile depending on your purposes</h4>
