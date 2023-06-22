@@ -66,7 +66,6 @@ const SitterProfile = ({bookingRequests}) => {
               <ServiceRequestsList bookingRequests={bookingRequests}/>
             </div>
           </div>
-          <ServiceRequestsList bookingRequests={bookingRequests}/>
         </div>
     </Layout>
   );
