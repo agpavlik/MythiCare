@@ -28,7 +28,7 @@ const SitterProfile = ({bookingRequests}) => {
   }
 
   return (
-    <Layout>
+    <Layout bookingRequests={bookingRequests}>
         <div className="sitter-profile-main">
           <div className="sitter-profile-info-photo">
             <img src={sitter.profile_photo} alt={sitter.first_name} className="sitter-profile-photo"/>
@@ -66,6 +66,7 @@ const SitterProfile = ({bookingRequests}) => {
               <ServiceRequestsList bookingRequests={bookingRequests}/>
             </div>
           </div>
+          <ServiceRequestsList bookingRequests={bookingRequests}/>
         </div>
     </Layout>
   );

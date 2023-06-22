@@ -7,7 +7,7 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
 const ServiceRequestListItem = (props) => {
-  const { petPhoto, petName, petAge, petId, endDate, startDate, fee, sitterId, bookingId } = props;
+  const { petPhoto, petName, petAge, petId, endDate, startDate, fee, sitterId, bookingId, onDelete } = props;
 
   const convertDate = (dateString) => {
     const date = new Date(dateString);
@@ -54,12 +54,14 @@ const ServiceRequestListItem = (props) => {
         sitterAccepted: false,
         sitterRejected: true,
       });
+      // onDelete(bookingId); // Remove the booking request from the array
       setShowComponent(false); // Hide the component
       handleCloseConfirmationModal();
     } catch (error) {
       console.error('Error rejecting booking:', error);
     }
   };
+  
 
   const handleCloseConfirmationModal = () => {
     setShowConfirmationModal(false);

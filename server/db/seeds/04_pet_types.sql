@@ -12,4 +12,8 @@ VALUES
   ('Pegasus'),
   ('Phoenix'),
   ('Basilisk'),
-  ('Hippogriff');
+  ('Hippogriff'),
+  ('Niffler'), 
+  ('Bowtruckle'), 
+  ('Thunderbird'), 
+  ('Occamy');

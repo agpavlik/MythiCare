@@ -1,29 +1,28 @@
-import { useSelector } from 'react-redux'
-import { NavLink } from 'react-router-dom'
-
-
-import { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { fetchProtectedInfo, onLogout } from '../api/auth'
+import { useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
+import Badge from 'react-bootstrap/Badge';
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchProtectedInfo, onLogout } from '../api/auth';
 import "../styles/navbar.css";
-import { unauthenticateUser } from '../redux/slices/authSlice'
+import { unauthenticateUser } from '../redux/slices/authSlice';
 
+const Navbar = (props) => {
+  const { isAuth } = useSelector((state) => state.auth);
+  const { bookingRequests } = props;
+  const dispatch = useDispatch();
 
-const Navbar = () => {
-  const { isAuth } = useSelector((state) => state.auth)
-
-  const dispatch = useDispatch()
   const logout = async () => {
     try {
-      await onLogout()
-
-      dispatch(unauthenticateUser())
-      localStorage.removeItem('isAuth')
+      await onLogout();
+      dispatch(unauthenticateUser());
+      localStorage.removeItem('isAuth');
     } catch (error) {
-      console.log(error.response)
+      console.log(error.response);
     }
-  }
+  };
 
+  // const hasBookingRequests = bookingRequests && bookingRequests.length > 0;
 
   return (
     <nav className='navbar'>
@@ -42,6 +41,11 @@ const Navbar = () => {
 
             <NavLink to='/sitter-profile' className='mx-3'>
               <span>My Sitter Profile</span>
+              {/* {hasBookingRequests && (
+                <Badge pill bg='danger'>
+                  {bookingRequests.length}
+                </Badge>
+              )} */}
             </NavLink>
 
             <NavLink to='/sitters' className='mx-3'>
@@ -69,7 +73,7 @@ const Navbar = () => {
         )}
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

@@ -35,7 +35,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   width: 550px;
   height: 500px;
   background-color:  #e7eefd;
@@ -45,10 +45,10 @@
   padding: 10px;
 }
 
-.user-pets-names{
-  height: 25px;
+.user-pets > h4 {
   margin: 10px 5%;
   width: 90%;
+  margin-top: 0;
 }
 
 .user-box {
@@ -97,6 +97,16 @@ color: black;
     border-color: #5468ff;
     border-style: ridge;
     margin: 30px 20px;
+    object-fit: cover;
+}
+
+.user-profile-photo {
+  border-radius: 5%;
+  border-color: #5468ff;
+  border-style: ridge;
+  width: 90%;
+  margin-left: 17px;
+  object-fit: cover;
 }
 
 

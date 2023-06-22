@@ -1,9 +1,9 @@
 import Navbar from './navbar'
 
-const Layout = ({ children }) => {
+const Layout = ({ children, bookingRequests }) => {
   return (
     <div>
-      <Navbar />
+      <Navbar bookingRequests={bookingRequests}/>
       <div className='container'>{children}</div>
     </div>
   )
