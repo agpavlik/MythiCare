@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import Layout from './layout'
 import "../styles/SitterProfile.css";
 import ServiceRequestsList from './ServiceRequestsList';
-import Layout from './layout';
-import Layout from '../components/layout'
-import "../styles/SitterProfile.css";
 
 const SitterProfile = ({bookingRequests}) => {
   const [sitter, setSitter] = useState(null);
@@ -34,15 +32,12 @@ const SitterProfile = ({bookingRequests}) => {
         <div className="sitter-profile-main">
           <div className="sitter-profile-info-photo">
             <img src="kovalsky.jpg" alt="Sitter Photo" className="sitter-profile-photo"/>
+            <div className = "sitter-profile-name">
+              <h5> First Name, Last Name</h5>
+          </div>
           </div>  
 
           <div className="sitter-profile-info">
-            <div className="sitter-profile-detailes">
-              <h5>First Name</h5>
-            </div>
-            <div className="sitter-profile-detailes">
-              <h5>Last Name</h5>
-            </div>
             <div className="sitter-profile-detailes">
               <h5>Phone</h5>
             </div>
@@ -55,20 +50,20 @@ const SitterProfile = ({bookingRequests}) => {
             <div className="sitter-profile-detailes">
               <h5>City</h5>
             </div>
-          </div>  
-            
-          <div className="sitter-profile-info"> 
             <div className="sitter-profile-detailes">
               <h5>Bio</h5>
             </div>
             <div className="sitter-profile-detailes">
               <h5>Experience</h5>
             </div>
+ 
             <div className="sitter-profile-detailes">
               <h5>Rate</h5>
             </div>
-          </div>
+          </div> 
+          <div className="sitter-profile-info"> 
 
+          </div>
         </div>
     </Layout>
   );

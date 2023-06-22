@@ -22,10 +22,10 @@
 
 .pet-profile-detailes {
   width: 90%;
-  margin: 5%;
+  margin: 20px 5% 20px;
   height: 50px;
   border-radius: 5px;
-  padding: 5px;
+  padding: 0;
 }
 
 .pet-profile-info-photo {
@@ -42,4 +42,9 @@
   height: 250px;
   border-color: #5468ff;
   border-style: ridge;
+}
+
+.pet-profile-output {
+  margin-left: 30px;
+  margin-bottom: 10px;
 }
