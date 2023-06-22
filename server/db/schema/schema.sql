@@ -52,7 +52,7 @@ CREATE TABLE pets (
   feeding_instructions TEXT,
   activity_needs TEXT,
   other_notes TEXT,
-  profile_photo VARCHAR(255),
+  profile_photo VARCHAR DEFAULT 'https://static.thenounproject.com/png/1878520-200.png',
   CONSTRAINT fk_type_id FOREIGN KEY (type_id) REFERENCES pet_types(id) ON DELETE CASCADE
 );
 
