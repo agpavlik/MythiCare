@@ -5,12 +5,41 @@ import Layout from '../components/layout'
 import { unauthenticateUser } from '../redux/slices/authSlice'
 import "../styles/user.css";
 import {Link} from "react-router-dom";
+import axios from 'axios'
 
 
 const User = () => {
   const dispatch = useDispatch()
   const [loading, setLoading] = useState(true)
   const [protectedData, setProtectedData] = useState(null)
+  const [user, setUser] = useState(null);
+  const [pets, setPets] = useState([])
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const response = await axios.get('/user');
+        const data = response.data.user[0];
+        setUser(data);
+      } catch (error) {
+        console.error('Error fetching user:', error)
+      }
+    };
+    fetchUser()
+  }, [])
+
+  useEffect(() => {
+    const fetchPets = async () => {
+      try {
+        const response = await axios.get('/user/pets');
+        const data = response.data.pets;
+        setPets(data)
+      } catch (error) {
+        console.error('Error fetching pets:', error)
+      }
+    }
+    fetchPets()
+  }, [])
 
   const logout = async () => {
     try {
@@ -18,7 +47,7 @@ const User = () => {
 
       dispatch(unauthenticateUser())
       localStorage.removeItem('isAuth')
-    } catch (error) {
+    } catch (error) {    
       console.log(error.response)
     }
   }
@@ -39,6 +68,10 @@ const User = () => {
     protectedInfo()
   }, [])
 
+
+
+  
+
   return loading ? (
     <Layout>
       <h1>Loading...</h1>
@@ -49,47 +82,33 @@ const User = () => {
         <div className="user-main">
           <div className="user-info">
             <h4>User info</h4>
+            <img src={user.user_photo} alt={user.first_name} className="user-profile-photo"/>
             <div className="user-detailes">
-              <h5>First Name</h5>
-            </div>
-            <div className="user-detailes">
-              <h5>Last Name</h5>
-            </div>
-            <div className="user-detailes">
-              <h5>Phone</h5>
-            </div>
-            <div className="user-detailes">
-              <h5>Email</h5>
+              <h5>{user.first_name} {user.last_name}</h5>
+              <h5>{user.email}</h5>
+              <h5>{user.phone}</h5>
             </div>
           </div>
           <div className = "user-pets">
             <div className = "user-pets-names"> 
-              <h4>My pets profiles</h4>
+              <h4>My pets</h4>
             </div>
-            <Link to={"/PetProfile/1"} className="user-link">
-              <div className = "user-pet">
-                <img src={""} alt={""} className="user-pet-photo"/>
-                <h5>Name: {""}</h5>
-              </div>
-            </Link>
-            <div className = "user-pet">
-              <img src={""} alt={""} className="user-pet-photo"/>
-              <h5>Name: {""}</h5>
-            </div>
-            <div className = "user-pet">
-              <img src={""} alt={""} className="user-pet-photo"/>
-              <h5>Name: {""}</h5>
-            </div>
-            <div className = "user-pet">
-              <img src={""} alt={""} className="user-pet-photo"/>
-              <h5>Name: {""}</h5>
-            </div>
+            {pets.map(pet => {
+              return <>
+                <Link to={`/PetProfile/${pet.pet_id}`} className="user-link">
+                  <div className = "user-pet">
+                    <img src={pet.pet_photo} alt={pet.name} className="user-pet-photo"/>
+                    <h5>{pet.name}</h5>
+                  </div>
+                </Link> 
+                </>
+              })}
           </div>
           <div className="user-box">
-            <h4 id="create-profile-text">Create profile depending on your porposes</h4>
+            <h4 id="create-profile-text">Create profile depending on your purposes</h4>
             <Link to={"/PetForm"} className="user-link">
               <div className="create-profile">
-                <h5> Create Pet Profile </h5>
+                <h5> Add a pet </h5>
               </div>
             </Link>
             <Link to={"/SitterForm"} className="user-link">

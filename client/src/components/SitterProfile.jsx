@@ -3,7 +3,6 @@ import axios from 'axios';
 import "../styles/SitterProfile.css";
 import ServiceRequestsList from './ServiceRequestsList';
 import Layout from './layout';
-import Layout from '../components/layout'
 import "../styles/SitterProfile.css";
 
 const SitterProfile = ({bookingRequests}) => {

@@ -31,12 +31,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //import routes
 const authRoutes = require('./routes/auth')
+const userRoutes = require('./routes/users')
 const petRoutes = require('./routes/pets')
 const sitterRoutes = require('./routes/sitters')
 const ownersRoutes = require('./routes/owners')
 
 //initialize routes
 app.use('/api', authRoutes)
+app.use('/user', userRoutes)
 app.use('/pets', petRoutes)
 app.use('/sitters', sitterRoutes)
 app.use('/owners', ownersRoutes)

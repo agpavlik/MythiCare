@@ -1,11 +1,55 @@
 const express = require('express');
 const router = express.Router();
-// const sitters = require('../../db/queries/sitters')
+const users = require('../../db/queries/users')
 const db = require('../../configs/db.config');
+const jwt = require('jsonwebtoken');
 
-router.get('/user', (req, res) => {
-  const userId = req.session.user_id;
-  res.json({ user_id: userId });
+
+
+// router.get('/', async (req, res) => {
+//   try {
+//     users.getAllUsers().then(data => {
+//       console.log(data);
+//       res.json({users: data});
+//   })
+// } catch {
+//   console.error('Error retrieving users profiles:', error);
+//   res.status(500
+//   ).json({ error: 'Error retrieving users profiles' });
+// }
+// });
+
+
+// Retrieve a specific owner by ID
+router.get('/', (req, res) => {
+  try {
+
+    users.getUserByEmail(3).then(data => {
+      console.log(data);
+      res.json({ user: data });
+    });
+  } catch (error) {
+    console.error('Error retrieving user profile:', error);
+    res.status(500).json({ error: 'Error retrieving user profile' });
+  }
 });
+
+router.get('/pets', (req, res) => {
+  try {
+
+    users.getPetsByUser(3).then(data => {
+      console.log(data);
+      res.json({ pets: data });
+    });
+  } catch (error) {
+    console.error('Error retrieving user profile:', error);
+    res.status(500).json({ error: 'Error retrieving user profile' });
+  }
+});
+
+
+
+
+
 
 module.exports = router;

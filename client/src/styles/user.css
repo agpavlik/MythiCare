@@ -24,7 +24,7 @@
 
 .user-detailes {
   width: 90%;
-  margin: 5%;
+  margin-top: 5%;
   height: 50px;
   border-radius: 5px;
   padding: 5px;
@@ -97,6 +97,14 @@ color: black;
     border-color: #5468ff;
     border-style: ridge;
     margin: 30px 20px;
+}
+
+.user-profile-photo {
+  border-radius: 25%;
+  border-color: #5468ff;
+  border-style: ridge;
+  width: 90%;
+  margin: 0 auto;
 }
 
 
