@@ -29,10 +29,10 @@ const SitterProfile = ({bookingRequests}) => {
   }
 
   return (
-    <Layout>
+    <Layout bookingRequests={bookingRequests}>
         <div className="sitter-profile-main">
           <div className="sitter-profile-info-photo">
-            <img src="kovalsky.jpg" alt="Sitter Photo" className="sitter-profile-photo"/>
+            <img src="kovalsky.jpg" alt="Sitter" className="sitter-profile-photo"/>
           </div>  
 
           <div className="sitter-profile-info">
@@ -67,7 +67,7 @@ const SitterProfile = ({bookingRequests}) => {
               <h5>Rate</h5>
             </div>
           </div>
-
+          <ServiceRequestsList bookingRequests={bookingRequests}/>
         </div>
     </Layout>
   );
