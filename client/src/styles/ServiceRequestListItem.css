@@ -4,6 +4,8 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 10px 30px;
+  height: 75px;
+  gap: 5px;
 }
 
 .booking-pet-info {
@@ -26,5 +28,6 @@
   height: 150px;
   border-color: #5468ff;
   border-style: ridge;
+  object-fit: cover;
 }
 

@@ -8,7 +8,7 @@ import "../styles/AvailabilityCalendar.css";
 
 const AvailabilityCalendar = (props) => {
   const { sitterId, nightly_rate } = props;
-  const {id} = useParams;
+  const { id } = useParams();
 
   const [availability, setAvailability] = useState([]);
   const [selectedRange, setSelectedRange] = useState({ start: null, end: null });
@@ -16,7 +16,7 @@ const AvailabilityCalendar = (props) => {
   const [selectedPet, setSelectedPet] = useState(null);
   const [pets, setPets] = useState([]);
   const [bookingRequest, setBookingRequest] = useState(null);
-
+  const [bookingSubmitted, setBookingSubmitted] = useState(false); // State variable for showing the message
 
   useEffect(() => {
     const fetchAvailability = async () => {
@@ -79,16 +79,21 @@ const AvailabilityCalendar = (props) => {
 
       setSelectedRange({ start: null, end: null });
       setSelectedPet(null);
+      setBookingSubmitted(true); // Set the state variable to show the message
     } catch (error) {
       console.error('Error inserting booking:', error);
     }
   };
 
   return (
-    <div className = "calendar-main">
-      <div className = "calendar-pet-select">
+    <div className="calendar-main">
+      <div className="calendar-pet-select">
         <label htmlFor="petSelect"></label>
-        <select id="petSelect" value={selectedPet} onChange={(e) => setSelectedPet(e.pet_id)}>
+        <select
+          id="petSelect"
+          value={selectedPet}
+          onChange={(e) => setSelectedPet(e.pet_id)}
+        >
           <option value="">Select a pet</option>
           {pets.map((pet) => (
             <option key={pet.id} value={pet.id}>
@@ -97,13 +102,14 @@ const AvailabilityCalendar = (props) => {
           ))}
         </select>
       </div>
-      <div className = "calendar-date-range">
-          <DateRangePicker onChange={handleRangeSelect} />
+      <div className="calendar-date-range">
+        <DateRangePicker onChange={handleRangeSelect} />
         <div>
           <h5>Selected Dates:</h5>
           {selectedRange.start && selectedRange.end ? (
             <p>
-              {selectedRange.start.toLocaleDateString()} - {selectedRange.end.toLocaleDateString()}
+              {selectedRange.start.toLocaleDateString()} -{' '}
+              {selectedRange.end.toLocaleDateString()}
             </p>
           ) : (
             <p>No date range selected</p>
@@ -111,8 +117,11 @@ const AvailabilityCalendar = (props) => {
           <p>Total Due to Sitter: ${fee}</p>
         </div>
       </div>
-      <div className = "calendar-btn">
-        <button onClick={handleSubmit} className="button-29">Submit Booking</button>
+      <div className="calendar-btn">
+        <button onClick={handleSubmit} className="button-29">
+          Submit Booking
+        </button>
+        {bookingSubmitted && <p className='submission-success'>Booking request submitted successfully!</p>}
       </div>
     </div>
   );

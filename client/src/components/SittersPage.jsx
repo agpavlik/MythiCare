@@ -22,6 +22,10 @@ const SittersPage = () => {
     fetchSitter();
   }, [id]);
 
+  useEffect(() => {
+    console.log(sitter)
+  }, [sitter])
+
   return (
     <Layout>
       <div className= "sitters-page-main">
@@ -32,7 +36,7 @@ const SittersPage = () => {
             <div className="sitter-page-info">{sitter.city}, {sitter.country}</div>
             <div className="sitter-page-info">{sitter.bio}</div>
             <div className="sitter-page-info">Experience: {sitter.experience} years</div>
-            <div className="sitter-page-info">Avg. Rating: {sitter.avg_rating}</div>
+            <div className="sitter-page-info">Avg. Rating: {sitter.rating}</div>
             <div className="sitter-page-info">Price from ${sitter.nightly_rate} per night</div>
           </article>
         </div>

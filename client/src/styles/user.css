@@ -107,6 +107,11 @@ color: black;
   width: 90%;
   margin-left: 17px;
   object-fit: cover;
+  padding: 0px;
+}
+
+.user-pet > h5 {
+  text-align: center;
 }
 
 

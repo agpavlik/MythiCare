@@ -11,7 +11,7 @@ const getAllSitters = () => {
 }
 
 const getSitterById = id => {
-	return db.query("SELECT * FROM pet_sitters JOIN users ON users.id = user_id WHERE pet_sitters.id = $1;", [id]).then(data => {
+	return db.query("SELECT * FROM pet_sitters JOIN users ON users.id = user_id JOIN reviews ON sitter_id = pet_sitters.id WHERE pet_sitters.id = $1;", [id]).then(data => {
 		return data.rows;
 	})
 }
