@@ -16,7 +16,7 @@ const Home = () => {
         <div className="home-box-user">
           <Link to={"/sitters"}>
             <button type="button" className="button-home-page">
-              <h3 class="home-font">Find a sitter</h3>
+              <h3 className="home-font">Find a sitter</h3>
             </button>
           </Link>
           <Link to={"/register"}>

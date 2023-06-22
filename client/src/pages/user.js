@@ -82,16 +82,19 @@ const User = () => {
         <div className="user-main">
           <div className="user-info">
             <h4>User info</h4>
+            {user && <>
             <img src={user.user_photo} alt={user.first_name} className="user-profile-photo"/>
             <div className="user-detailes">
               <h5>{user.first_name} {user.last_name}</h5>
               <h5>{user.email}</h5>
               <h5>{user.phone}</h5>
             </div>
+            </>
+            }
           </div>
           <div className = "user-pets">
               <h4>My pets</h4>
-              {pets.map(pet => {
+              {pets && pets.map(pet => {
                 return <>
                   <Link to={`/PetProfile/${pet.pet_id}`} className="user-link">
                     <div className = "user-pet">

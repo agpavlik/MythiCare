@@ -44,11 +44,11 @@ const PetForm = () => {
           <form onSubmit={handleSubmit} className="container mt-3">
             <h2>Add a Pet Profile</h2>
 
-            <div className='mb-3'>
+            <div className='mb-3-plus'>
               <label className="pet-form-label">
                 Pet&nbsp;Photo
               </label>
-              <input type="file" name="photo" onChange={handleInputChange} className="pet-photo"/>
+              <input type="text" name="photo" value={petData.photo} onChange={handleInputChange} className="form-control"/>
             </div>
 
             <div className='mb-3-plus'>

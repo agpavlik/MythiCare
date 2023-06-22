@@ -21,10 +21,10 @@ const jwt = require('jsonwebtoken');
 
 
 // Retrieve a specific owner by ID
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
   try {
 
-    users.getUserByEmail(3).then(data => {
+    users.getUserByEmail(11).then(data => {
       console.log(data);
       res.json({ user: data });
     });
@@ -34,10 +34,10 @@ router.get('/', (req, res) => {
   }
 });
 
-router.get('/pets', (req, res) => {
+router.get('/pets', async (req, res) => {
   try {
 
-    users.getPetsByUser(3).then(data => {
+    users.getPetsByUser(11).then(data => {
       console.log(data);
       res.json({ pets: data });
     });
