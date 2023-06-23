@@ -44,6 +44,7 @@
   height: 250px;
   border-color: #5468ff;
   border-style: ridge;
+  object-fit: cover;
 }
 
 .pet-profile-output {
