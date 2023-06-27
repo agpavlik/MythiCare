@@ -9,10 +9,10 @@ Provides a demonstration of React and React Bootstrap front-end skills, and Node
 !["Home Page"](https://github.com/BGriffin99/Pet-sitting-app/blob/main/docs/Screenshot%202023-06-23%20at%208.17.19%20PM.png?raw=true)
 
 <em>Register Page</em>
-!["Register Page"](./docs/Screenshot from 2023-06-27 00-55-25.png)
+!["Register Page"](/docs/Screenshot_13.png)
 
 <em>Login Page</em>
-!["Login Page"](/docs/Screenshot from 2023-06-27 00-55-25.png)
+!["Login Page"](/docs/Screenshot_14.png)
 
 <em>All Sitters Page</em>
 
