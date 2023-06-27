@@ -5,7 +5,6 @@ MythiCare is a pet sitting app where you can find or become a sitter for the rar
 Provides a demonstration of React and React Bootstrap front-end skills, and Node, Express and PostgreSQL back-end skills.
 
 <em>Home Page</em>
-
 !["Home Page"](https://github.com/BGriffin99/Pet-sitting-app/blob/main/docs/Screenshot%202023-06-23%20at%208.17.19%20PM.png?raw=true)
 
 <em>Register Page</em>
@@ -15,23 +14,18 @@ Provides a demonstration of React and React Bootstrap front-end skills, and Node
 !["Login Page"](/docs/Screenshot_14.png)
 
 <em>All Sitters Page</em>
-
 !["All Sitters Page"](https://github.com/BGriffin99/Pet-sitting-app/blob/main/docs/Screenshot%202023-06-23%20at%208.17.36%20PM.png?raw=true)
 
 <em>Pet sitter page from owner's perspective</em>
-
 !["Pet sitter page"](https://github.com/BGriffin99/Pet-sitting-app/blob/main/docs/Screenshot%202023-06-23%20at%208.17.51%20PM.png?raw=true)
 
 <em>User profile page</em>
-
 !["User profile page"](https://github.com/BGriffin99/Pet-sitting-app/blob/main/docs/Screenshot%202023-06-23%20at%208.18.02%20PM.png?raw=true)
 
 <em>Sitter profile page from user perspective</em>
-
 !["Sitter profile page"](https://github.com/BGriffin99/Pet-sitting-app/blob/main/docs/Screenshot%202023-06-23%20at%208.18.22%20PM.png?raw=true)
 
 <em>Pet profile page</em>
-
 !["Pet profile page"](https://github.com/BGriffin99/Pet-sitting-app/blob/main/docs/Screenshot%202023-06-23%20at%208.19.12%20PM.png?raw=true)
 
 ## Getting Started
